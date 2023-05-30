@@ -1,11 +1,13 @@
+import "mapbox-gl/dist/mapbox-gl.css";
+
 import * as React from "react";
-import { useEffect, useState, useMemo, useCallback } from "react";
+
+import { IndoorControl, IndoorMap, addIndoorTo } from "../map-indoor";
+import Map, { Layer, Popup, Source, useControl } from "react-map-gl";
+import { useCallback, useEffect, useMemo, useState } from "react";
+
 import arena from "../assets/arena.test.json";
 
-import Map, { Source, Layer, Popup, useControl } from "react-map-gl";
-import { addIndoorTo, IndoorControl, IndoorMap } from "map-gl-indoor";
-
-import "mapbox-gl/dist/mapbox-gl.css";
 // import {
 //   clusterCountLayer,
 //   clusterLayer,

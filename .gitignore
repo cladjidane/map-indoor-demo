@@ -22,3 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+src/assets/ligne-4-bibus-brest-2.json
+src/assets/lignes-bus.json

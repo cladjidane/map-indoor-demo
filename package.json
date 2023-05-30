@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "map-gl-indoor": "github:cladjidane/map-gl-indoor#main",
     "mapbox-gl": "^2.14.1",
     "react": "^18.2.0",
+    "@turf/bbox": "^6.5.0",
+    "@turf/destination": "^6.5.0",
+    "@turf/distance": "^6.5.0",
     "react-dom": "^18.2.0",
     "react-map-gl": "^7.0.23",
     "react-router-dom": "^6.11.0"
@@ -22,6 +24,7 @@
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.14",
+    "@turf/centroid": "^6.5.0",
     "eslint": "^8.38.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
