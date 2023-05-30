@@ -44,10 +44,10 @@
     }
   },
   {
+    "filter": ["filter-==", "leisure", "garden"],
     "id": "indoor-gardens",
     "type": "fill",
     "source": "indoor",
-    "filter": ["filter-==", "leisure", "garden"],
     "layout": {
       "visibility": "visible"
     },
@@ -104,7 +104,7 @@
           [18, 0.1]
         ]
       },
-      "fill-pattern": "si-main-3",
+      "fill-pattern": "parking",
       "fill-translate-anchor": "viewport"
     }
   },
@@ -146,10 +146,10 @@
         "#000"
       ],
       "fill-opacity": {
-        "base": 0.1,
+        "base": 1,
         "stops": [
           [17, 0],
-          [18, 0.1]
+          [18, 1]
         ]
       }
     }
@@ -188,7 +188,6 @@
         ["get", "fill-color"],
         "#000"
       ],
-
       "fill-opacity": {
         "base": 0.1,
         "stops": [
@@ -264,8 +263,12 @@
     "type": "fill",
     "source": "indoor",
     "paint": {
-      "fill-color": "#7B635A",
-      "fill-outline-color": "#000000",
+      "fill-color": [
+        "case",
+        ["has", "fill-color"],
+        ["get", "fill-color"],
+        "#000"
+      ],
       "fill-opacity": {
         "base": 1,
         "stops": [
@@ -498,6 +501,20 @@
     "interactive": true,
     "minzoom": 17,
     "layout": {
+      "icon-image": "{maki}",
+      "icon-size": 1.5
+    },
+    "filter": ["filter-==", "indoor", "door"],
+    "type": "symbol",
+    "source": "indoor",
+    "id": "poi-indoor-door",
+    "paint": {
+    }
+  },
+  {
+    "interactive": true,
+    "minzoom": 17,
+    "layout": {
       "text-line-height": 1.2,
       "text-size": {
         "base": 1,
@@ -570,7 +587,7 @@
       "icon-optional": false,
       "text-rotation-alignment": "viewport",
       "text-anchor": "top",
-      "text-field": "{name}",
+      "text-field": "{name} - *****************",
       "text-letter-spacing": 0.02,
       "text-max-width": 8,
       "icon-allow-overlap": true

@@ -6,7 +6,7 @@ import { IndoorControl, IndoorMap, addIndoorTo } from '../map-indoor/'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import arena from '../assets/arena.test.json'
-import bus from '../assets/ligne-4-bibus-brest-2.json'
+//import bus from '../assets/ligne-4-bibus-brest-2.json'
 import mapboxgl from 'mapbox-gl'
 
 mapboxgl.accessToken =
@@ -25,44 +25,44 @@ const MapIndoorMapbox = () => {
     if (map.current) return // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v12',
+      style: 'mapbox://styles/jeofun/clia4348h02t701pr52we3yn6',
       center: [lng, lat],
       zoom: zoom,
     })
 
     map.current.on('load', function () {
-      map.current.addSource('mapillary', bus)
+      // map.current.addSource('mapillary', bus)
 
-      map.current.addLayer(
-        {
-          id: 'mapillary', // Layer ID
-          type: 'line',
-          source: 'mapillary', // ID of the tile source created above
-          // Source has several layers. We visualize the one with name 'sequence'.
-          'source-layer': 'sequence',
-          layout: {
-            'line-cap': 'round',
-            'line-join': 'round',
-          },
-          paint: {
-            'line-opacity': 0.6,
-            'line-color': 'rgb(53, 175, 109)',
-            'line-width': 2,
-          },
-        }
-      )
+      // map.current.addLayer(
+      //   {
+      //     id: 'mapillary', // Layer ID
+      //     type: 'line',
+      //     source: 'mapillary', // ID of the tile source created above
+      //     // Source has several layers. We visualize the one with name 'sequence'.
+      //     'source-layer': 'sequence',
+      //     layout: {
+      //       'line-cap': 'round',
+      //       'line-join': 'round',
+      //     },
+      //     paint: {
+      //       'line-opacity': 0.6,
+      //       'line-color': 'rgb(53, 175, 109)',
+      //       'line-width': 2,
+      //     },
+      //   }
+      // )
     })
 
     addIndoorTo(map.current)
     // Retrieve the geojson from the path and add the map
     const geojson = arena
     console.log(geojson)
-    //setTimeout(() => {
+
     map.current.indoor.addMap(IndoorMap.fromGeojson(geojson))
     // Add the specific control
     console.log(map)
     map.current.addControl(new IndoorControl())
-    //}, 2000);
+
   }, [])
 
   return (
