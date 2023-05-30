@@ -1,0 +1,21 @@
+{
+"type": "FeatureCollection",
+"name": "arena-test-1-portes",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "name": "rdc-portes" }, "geometry": { "type": "Point", "coordinates": [ -4.520137434892257, 48.387725456577478 ] } },
+{ "type": "Feature", "properties": { "id": 2, "name": "rdc-portes" }, "geometry": { "type": "Point", "coordinates": [ -4.520082794921683, 48.387760571721465 ] } },
+{ "type": "Feature", "properties": { "id": 3, "name": "rdc-portes" }, "geometry": { "type": "Point", "coordinates": [ -4.52002404226515, 48.387797247512658 ] } },
+{ "type": "Feature", "properties": { "id": 4, "name": "rdc-portes" }, "geometry": { "type": "Point", "coordinates": [ -4.520282552182782, 48.387608170920764 ] } },
+{ "type": "Feature", "properties": { "id": 5, "name": "rdc-portes" }, "geometry": { "type": "Point", "coordinates": [ -4.520377841382914, 48.387550041210794 ] } },
+{ "type": "Feature", "properties": { "id": 6, "name": "rdc-portes" }, "geometry": { "type": "Point", "coordinates": [ -4.520443539433333, 48.387474475166542 ] } },
+{ "type": "Feature", "properties": { "id": 7, "name": "rdc-portes" }, "geometry": { "type": "Point", "coordinates": [ -4.5205576941332, 48.38734855870824 ] } },
+{ "type": "Feature", "properties": { "id": 8, "name": "rdc-portes" }, "geometry": { "type": "Point", "coordinates": [ -4.519848373904111, 48.386981606566621 ] } },
+{ "type": "Feature", "properties": { "id": 9, "name": "rdc-portes" }, "geometry": { "type": "Point", "coordinates": [ -4.51968413423621, 48.387081822128657 ] } },
+{ "type": "Feature", "properties": { "id": 10, "name": "rdc-portes" }, "geometry": { "type": "Point", "coordinates": [ -4.519518918887115, 48.387214002697483 ] } },
+{ "type": "Feature", "properties": { "id": 11, "name": "rdc-portes" }, "geometry": { "type": "Point", "coordinates": [ -4.519390128969317, 48.387320913200568 ] } },
+{ "type": "Feature", "properties": { "id": 12, "name": "rdc-portes" }, "geometry": { "type": "Point", "coordinates": [ -4.519290284260316, 48.387472963306955 ] } },
+{ "type": "Feature", "properties": { "id": 13, "name": "rdc-portes" }, "geometry": { "type": "Point", "coordinates": [ -4.519274998588254, 48.387496073155518 ] } },
+{ "type": "Feature", "properties": { "id": 14, "name": "rdc-portes" }, "geometry": { "type": "Point", "coordinates": [ -4.519260038143257, 48.387519614953085 ] } }
+]
+}
