@@ -10,26 +10,28 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "mapbox-gl": "^2.14.1",
-    "react": "^18.2.0",
+    "@heroicons/react": "^2.0.18",
     "@turf/bbox": "^6.5.0",
     "@turf/destination": "^6.5.0",
     "@turf/distance": "^6.5.0",
+    "mapbox-gl": "^2.14.1",
+    "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-map-gl": "^7.0.23",
-    "react-router-dom": "^6.11.0"
+    "react-router-dom": "^6.11.0",
+    "usehooks-ts": "^2.9.1"
   },
   "devDependencies": {
+    "@turf/centroid": "^6.5.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.14",
-    "@turf/centroid": "^6.5.0",
     "eslint": "^8.38.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
-    "postcss": "^8.4.23",
+    "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
     "vite": "^4.3.2"
   }

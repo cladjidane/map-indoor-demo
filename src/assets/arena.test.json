@@ -6,7 +6,7 @@
       "type": "Feature",
       "properties": {
         "id": 1,
-        "level": "0;2",
+        "level": "0",
         "name": "rdc-billterie",
         "indoor": "area",
         "fill-color": "#e84e0f"
