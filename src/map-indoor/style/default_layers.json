@@ -177,6 +177,48 @@
     }
   },
   {
+    "filter": ["filter-==", "indoor", "room-3D"],
+    "id": "indoor-rooms-3D",
+    "type": "fill-extrusion",
+    "source": "indoor",
+    "paint": {
+      "fill-extrusion-color": [
+        "interpolate",
+        ["linear"],
+        ["get", "extrusion"],
+        1,
+        "#fafa6e",
+        1.5,
+        "#d9f271",
+        2,
+        "#b9e976",
+        2.5,
+        "#9cdf7c",
+        3,
+        "#7fd482",
+        3.5,
+        "#64c987",
+        4,
+        "#4abd8c",
+        4.5,
+        "#30b08e",
+        5,
+        "#14a38f",
+        5.5,
+        "#00968e",
+        6,
+        "#00898a",
+        6.5,
+        "#007b84",
+        7,
+        "#106e7c"
+      ],
+      "fill-extrusion-base": ["get", "height"],
+      "fill-extrusion-height": ["get", "extrusion"],
+      "fill-extrusion-opacity": 1
+    }
+  },
+  {
     "filter": ["filter-==", "indoor", "area"],
     "id": "indoor-areas",
     "type": "fill",
@@ -186,7 +228,7 @@
         "case",
         ["has", "fill-color"],
         ["get", "fill-color"],
-        "#000"
+        "red"
       ],
       "fill-opacity": {
         "base": 0.1,
@@ -195,6 +237,48 @@
           [18, 0.1]
         ]
       }
+    }
+  },
+  {
+    "filter": ["filter-==", "indoor", "area-3D"],
+    "id": "indoor-areas3D",
+    "type": "fill-extrusion",
+    "source": "indoor",
+    "paint": {
+      "fill-extrusion-color": [
+        "interpolate",
+        ["linear"],
+        ["get", "extrusion"],
+        1,
+        "#fafa6e",
+        1.5,
+        "#d9f271",
+        2,
+        "#b9e976",
+        2.5,
+        "#9cdf7c",
+        3,
+        "#7fd482",
+        3.5,
+        "#64c987",
+        4,
+        "#4abd8c",
+        4.5,
+        "#30b08e",
+        5,
+        "#14a38f",
+        5.5,
+        "#00968e",
+        6,
+        "#00898a",
+        6.5,
+        "#007b84",
+        7,
+        "#106e7c"
+      ],
+      "fill-extrusion-base": ["get", "height"],
+      "fill-extrusion-height": ["get", "extrusion"],
+      "fill-extrusion-opacity": 1
     }
   },
   {
@@ -508,8 +592,7 @@
     "type": "symbol",
     "source": "indoor",
     "id": "poi-indoor-door",
-    "paint": {
-    }
+    "paint": {}
   },
   {
     "interactive": true,
