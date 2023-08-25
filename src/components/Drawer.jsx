@@ -7,10 +7,10 @@ const Drawer = () => {
     setDrawerIsOpen(!drawerIsOpen);
   };
   return (
-    <div className="absolute w-1/3 h-full z-10 flex">
+    <div className="absolute w-1/3 h-full z-10 right-0 pointer-events-none">
       <div
         className={`bg-slate-300 w-full rounded shadow-lg m-5 p-5 transition-all transform ${
-          drawerIsOpen ? "-translate-x-full" : "translate-x-0"
+          drawerIsOpen ? "translate-x-full" : "translate-x-0"
         } `}
       >
         <h2 className="text-xl font-bold mb-4">Informations</h2>
@@ -21,11 +21,9 @@ const Drawer = () => {
       </div>
 
       <div
-        className={`absolute top-8 w-full transition-all transform border-1 border-red-300 ${
-          drawerIsOpen ? "translate-x-8 " : "translate-x-full "
-        } `}
+        className={`absolute right-2 top-8 w-8 transition-all transform border-1 border-red-300 pointer-events-auto`}
       >
-        {drawerIsOpen ? (
+        {!drawerIsOpen ? (
           <button onClick={handleClick} className="border-0 bg-transparent">
             <svg
               xmlns="http://www.w3.org/2000/svg"

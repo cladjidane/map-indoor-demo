@@ -15,6 +15,8 @@ import schyzo from "../assets/test-points.json";
 import extrude from "../assets/extrude.json";
 import mapboxgl from "mapbox-gl";
 
+import { gsap } from "gsap";
+
 mapboxgl.accessToken =
   "pk.eyJ1IjoiamVvZnVuIiwiYSI6ImNrd3huZXZjMzAwMWkycXFtb29zeDMxdnMifQ.N0SyKbZ6Br7bCL0IPmUZIg";
 
@@ -217,7 +219,7 @@ const MapIndoorMapbox = () => {
   return (
     <div>
       <Drawer></Drawer>
-      <div ref={mapContainer} className="map-container" />
+      <div ref={mapContainer} className="map-container"></div>
     </div>
   );
 };

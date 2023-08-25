@@ -11,6 +11,10 @@ import Drawer from "../components/Drawer";
 
 import arena from "../assets/arena.json";
 import mapboxgl from "mapbox-gl";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiamVvZnVuIiwiYSI6ImNrd3huZXZjMzAwMWkycXFtb29zeDMxdnMifQ.N0SyKbZ6Br7bCL0IPmUZIg";
@@ -21,7 +25,9 @@ const Root = () => {
   const map = useRef(null);
   const [lng, setLng] = useState(-4.519800633193512);
   const [lat, setLat] = useState(48.38794021277715);
-  const [zoom, setZoom] = useState(17);
+  const [zoom, setZoom] = useState(18);
+
+  const [debug, setDebug] = useState(0);
 
   useEffect(() => {
     if (!map.current) return;
@@ -36,6 +42,44 @@ const Root = () => {
   }, [width]);
 
   useEffect(() => {
+    const el = document.getElementById("section-map");
+    el.querySelectorAll("ul").forEach((section, index) => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top center",
+        end: "bottom center",
+        toggleClass: "active",
+        scrub: 1,
+        snap: {
+          snapTo: 0.5,
+          duration: 0.1,
+          delay: 0.1,
+          ease: "power1.inOut",
+        },
+        markers: true,
+        onUpdate: (self) => {
+          const isCurrentlyActive = self.isActive;
+          if (isCurrentlyActive) {
+            setDebug(`${index}`);
+            console.log(section.className);
+          }
+        },
+      });
+    });
+
+    // Parcourez chaque section pour configurer le ScrollTrigger
+    // el.querySelectorAll("ul").forEach((section, index) => {
+    //   gsap.to(section, {
+    //     scrollTrigger: {
+    //       trigger: section,
+    //       start: "top center", // Quand le centre de la section atteint le haut de la fenêtre
+    //       end: "bottom center", // Quand le centre de la section atteint le bas de la fenêtre
+    //       toggleClass: "active", // Classe à ajouter lorsque la section est visible
+    //       markers: true, // Supprimez cette ligne si vous ne voulez pas afficher les marqueurs de débogage ScrollTrigger
+    //     },
+    //   });
+    // });
+
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
@@ -46,6 +90,7 @@ const Root = () => {
 
     const nav = new mapboxgl.NavigationControl();
     map.current.addControl(nav, "top-right");
+    map.current.scrollZoom.disable();
 
     map.current.on("load", function () {
       // map.current.addSource("transports", {
@@ -136,22 +181,24 @@ const Root = () => {
 
       map.current.on("mouseenter", "indoor-areas", (e) => {
         if (e.features.length > 0) {
+          map.current.getCanvas().style.cursor = "pointer";
 
-          map.current.getCanvas().style.cursor = 'pointer';
-
-          const layerName = e.features[0].layer.id; 
+          const layerName = e.features[0].layer.id;
           const coordinates = e.features[0].geometry.coordinates.slice();
           const description = e.features[0].properties.description;
           const polygonId = e.features[0].id;
 
-          map.current.setPaintProperty(layerName, 'fill-color', ['match', ['id'], polygonId, 'red', 'blue']); 
-
+          map.current.setPaintProperty(layerName, "fill-color", [
+            "match",
+            ["id"],
+            polygonId,
+            "red",
+            "blue",
+          ]);
         }
       });
 
-      map.current.on("mouseleave", "room, area", () => {
-
-      });
+      map.current.on("mouseleave", "room, area", () => {});
     });
     addIndoorTo(map.current);
 
@@ -159,12 +206,17 @@ const Root = () => {
 
     map.current.indoor.addMap(IndoorMap.fromGeojson(geojson));
     map.current.addControl(new IndoorControl());
+
+    //return ScrollTrigger.refresh()
   }, []);
 
   return (
     <div>
       <Drawer></Drawer>
       <div ref={mapContainer} className="map-container" />
+      <div className="absolute left-2 top-2 w-48 bg-slate-100 p-4 z-50">
+        {debug}
+      </div>
     </div>
   );
 };
