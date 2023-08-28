@@ -29,6 +29,8 @@ const MapIndoor = () => {
   }
 
   const onMapLoad = React.useCallback(async () => {
+    console.log('mapRef.current.getMap()', mapRef.current.getMap())
+    console.log('mapRef.current', mapRef.current)
     addIndoorTo(mapRef.current.getMap());
 
     // Retrieve the geojson from the path and add the map

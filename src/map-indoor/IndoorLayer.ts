@@ -157,7 +157,7 @@ class IndoorLayer {
 
         // Remove the previous selected map if it exists
         if (previousMap !== null) {
-            console.log('Prevuou smap ?')
+            //console.log('Prevuou smap ?')
             previousMap.layersToHide.forEach(layerId => this._map.setLayoutProperty(layerId, 'visibility', 'visible'));
             previousMap.layers.forEach(({ id }) => this._removeLayerForFiltering(id));
             this._map.removeSource(SOURCE_ID);
@@ -179,7 +179,7 @@ class IndoorLayer {
         }
 
         const { geojson, layers, levelsRange, beforeLayerId } = indoorMap;
-        console.log(geojson, layers, levelsRange, beforeLayerId, "************")
+        //console.log(geojson, layers, levelsRange, beforeLayerId, "************")
 
         // Add map source
         this._map.addSource(SOURCE_ID, {

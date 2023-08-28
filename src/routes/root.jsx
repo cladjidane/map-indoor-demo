@@ -3,8 +3,8 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import * as React from "react";
 import * as turf from "@turf/turf";
 
-import { IndoorControl, IndoorMap, addIndoorTo } from "../map-indoor/";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { addIndoorTo, IndoorMap, IndoorControl, IndoorLayer } from "../map-indoor" // dossier ts pas le compoenent
 import { useWindowSize } from "usehooks-ts";
 
 import Drawer from "../components/Drawer";
@@ -13,6 +13,8 @@ import arena from "../assets/arena.json";
 import mapboxgl from "mapbox-gl";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+
+import chapters from '../chapters.json'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,6 +28,8 @@ const Root = () => {
   const [lng, setLng] = useState(-4.519800633193512);
   const [lat, setLat] = useState(48.38794021277715);
   const [zoom, setZoom] = useState(18);
+
+  const [currentChapter, setCurrentChapter] = useState(0)
 
   const [debug, setDebug] = useState(0);
 
@@ -50,18 +54,19 @@ const Root = () => {
         end: "bottom center",
         toggleClass: "active",
         scrub: 1,
-        snap: {
-          snapTo: 0.5,
-          duration: 0.1,
-          delay: 0.1,
-          ease: "power1.inOut",
-        },
+        // snap: {
+        //   snapTo: 0.5,
+        //   duration: 0.1,
+        //   delay: 0.1,
+        //   ease: "power1.inOut",
+        // },
         markers: true,
         onUpdate: (self) => {
           const isCurrentlyActive = self.isActive;
           if (isCurrentlyActive) {
             setDebug(`${index}`);
-            console.log(section.className);
+            setCurrentChapter(index)
+            // console.log(section.className);
           }
         },
       });
@@ -207,8 +212,26 @@ const Root = () => {
     map.current.indoor.addMap(IndoorMap.fromGeojson(geojson));
     map.current.addControl(new IndoorControl());
 
+    console.log(map.current)
+
     //return ScrollTrigger.refresh()
   }, []);
+
+  useEffect(() => {
+    if(!map.current) return
+    if(!chapters[currentChapter]) return
+
+    const easeTo = chapters[currentChapter].easeTo
+    const level = chapters[currentChapter].level
+    map.current.easeTo({
+      ...easeTo,
+      padding: { top: 10, bottom: 25, left: 5, right: 5 },
+    });
+
+    const indoorLayer = new IndoorLayer(map.current);
+    indoorLayer.setLevel({...level});
+
+  }, [currentChapter])
 
   return (
     <div>
