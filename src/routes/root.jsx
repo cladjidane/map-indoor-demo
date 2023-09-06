@@ -4,17 +4,27 @@ import * as React from "react";
 import * as turf from "@turf/turf";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { addIndoorTo, IndoorMap, IndoorControl, IndoorLayer } from "../map-indoor" // dossier ts pas le compoenent
+import {
+  addIndoorTo,
+  IndoorMap,
+  IndoorControl,
+  IndoorLayer,
+} from "../map-indoor"; // dossier ts pas le compoenent
 import { useWindowSize } from "usehooks-ts";
 
 import Drawer from "../components/Drawer";
 
-import arena from "../assets/arena.json";
+import n0 from "../datas/n0.json";
+import n1 from "../datas/n1.json";
+import nmin1 from "../datas/n-1.json";
+import nmin2 from "../datas/n-2.json";
+import sols from "../datas/sols.json";
+
 import mapboxgl from "mapbox-gl";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-import chapters from '../chapters.json'
+import chapters from "../chapters.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,11 +35,11 @@ const Root = () => {
   const { width, height } = useWindowSize();
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(-4.519800633193512);
-  const [lat, setLat] = useState(48.38794021277715);
+  const [lng, setLng] = useState(-4.519826387285736);
+  const [lat, setLat] = useState(48.387655837383534);
   const [zoom, setZoom] = useState(18);
 
-  const [currentChapter, setCurrentChapter] = useState(0)
+  const [currentChapter, setCurrentChapter] = useState(0);
 
   const [debug, setDebug] = useState(0);
 
@@ -63,9 +73,11 @@ const Root = () => {
         markers: true,
         onUpdate: (self) => {
           const isCurrentlyActive = self.isActive;
+          //const level = section.getAttribute("data-level");
+
           if (isCurrentlyActive) {
             setDebug(`${index}`);
-            setCurrentChapter(index)
+            setCurrentChapter(index);
             // console.log(section.className);
           }
         },
@@ -88,7 +100,7 @@ const Root = () => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/jeofun/clia4348h02t701pr52we3yn6",
+      style: "mapbox://styles/jeofun/clm7b04lj00yi01que65k0llt",
       center: [lng, lat], //[0.001196129190514, -0.006008249764901], // [lng, lat], //
       zoom: zoom,
     });
@@ -186,6 +198,7 @@ const Root = () => {
 
       map.current.on("mouseenter", "indoor-areas", (e) => {
         if (e.features.length > 0) {
+          console.log(e.features)
           map.current.getCanvas().style.cursor = "pointer";
 
           const layerName = e.features[0].layer.id;
@@ -203,39 +216,57 @@ const Root = () => {
         }
       });
 
-      map.current.on("mouseleave", "room, area", () => {});
+      map.current.on("mouseleave", "indoor-areas, indoor-rooms", () => {
+        map.current.getCanvas().style.cursor = "auto";
+      });
     });
     addIndoorTo(map.current);
 
-    const geojson = arena;
+    const geojsonArray = [];
+
+    geojsonArray.push(n1);
+    geojsonArray.push(n0);
+    geojsonArray.push(nmin1);
+    geojsonArray.push(nmin2);
+    geojsonArray.push(sols);
+
+    const geojson = {
+      type: "FeatureCollection",
+      features: geojsonArray.reduce((allFeatures, geojsonData) => {
+        return allFeatures.concat(geojsonData.features);
+      }, []),
+    };
 
     map.current.indoor.addMap(IndoorMap.fromGeojson(geojson));
+    //map.current.fire('indoor.map.loaded', map.current.indoor);
     map.current.addControl(new IndoorControl());
-
-    console.log(map.current)
 
     //return ScrollTrigger.refresh()
   }, []);
 
   useEffect(() => {
-    if(!map.current) return
-    if(!chapters[currentChapter]) return
+    if (!map.current) return;
+    if (!chapters[currentChapter]) return;
 
-    const easeTo = chapters[currentChapter].easeTo
-    const level = chapters[currentChapter].level
-    map.current.easeTo({
-      ...easeTo,
-      padding: { top: 10, bottom: 25, left: 5, right: 5 },
-    });
+    const easeTo = chapters[currentChapter].easeTo;
+    setDebug(`${chapters[currentChapter].level}`);
+    const level = chapters[currentChapter].level;
+    // map.current.easeTo({
+    //   ...easeTo,
+    //   padding: { top: 10, bottom: 25, left: 5, right: 5 },
+    // });
 
-    const indoorLayer = new IndoorLayer(map.current);
-    indoorLayer.setLevel({...level});
-
-  }, [currentChapter])
+    if (map.current.indoor.getSelectedMap()) {
+      map.current.indoor.setLevel(level);
+    }
+    // map.current.fire('indoor.level.changed', { level });
+    // const indoorLayer = new IndoorLayer(map.current);
+    // indoorLayer.setLevel({...level});
+  }, [currentChapter]);
 
   return (
     <div>
-      <Drawer></Drawer>
+      {/* <Drawer></Drawer> */}
       <div ref={mapContainer} className="map-container" />
       <div className="absolute left-2 top-2 w-48 bg-slate-100 p-4 z-50">
         {debug}

@@ -35,6 +35,8 @@ class GeoJsonHelper {
                         };
                     }
                 }
+            } else {
+                return propertyLevel;
             }
         }
         return null;

@@ -10,8 +10,10 @@
     <div style="background: silver; height: 100vh">header</div>
     <div style="display: flex; position: relative;" id="section-map">
       <div style="display: flex; flex-direction: column; background: green; width: 20%;" >
+        <h3>Brest Arena</h3>
         <ul
           id="menu1"
+          data-level="1"
           style="
             height: 100vh;
             display: flex;
@@ -21,15 +23,15 @@
             justify-content: center;
           "
         >
-          <li>Lorem</li>
-          <li>Lorem</li>
-          <li>Lorem</li>
-          <li>Lorem</li>
-          <li>Lorem</li>
+          <li>Présentation</li>
+          <li>Les points de restauration</li>
+          <li>Bars</li>
+          <li>Accès</li>
         </ul>
 
         <ul
         id="menu2"
+        data-level="0"
           style="
             height: 100vh;
             display: flex;
@@ -47,6 +49,7 @@
         </ul>
 
         <ul id="menu3"
+        data-level="-1"
           style="
             height: 100vh;
             background-color: silver;
@@ -65,6 +68,7 @@
 
         <ul
         id="menu4"
+        data-level="-2"
           style="
             height: 100vh;
             background-color: gray;
