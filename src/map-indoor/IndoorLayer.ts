@@ -189,7 +189,7 @@ class IndoorLayer {
     }
 
     const { geojson, layers, levelsRange, beforeLayerId } = indoorMap;
-    //console.log(geojson, layers, levelsRange, beforeLayerId, "************")
+    console.log(geojson, layers, levelsRange, beforeLayerId, "************")
 
     // Add map source
     this._map.addSource(SOURCE_ID, {
