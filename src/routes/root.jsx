@@ -13,6 +13,7 @@ import {
 import { useWindowSize } from "usehooks-ts";
 
 import Drawer from "../components/Drawer";
+import { filtersByDatas } from "../map-indoor/Utils";
 
 import n0 from "../datas/n0.json";
 import n1 from "../datas/n1.json";
@@ -20,6 +21,7 @@ import nmin1 from "../datas/n-1.json";
 import nmin2 from "../datas/n-2.json";
 import sols from "../datas/sols.json";
 import gradins from "../datas/gradins.json";
+import sieges from "../datas/sieges.json";
 
 import mapboxgl from "mapbox-gl";
 import { gsap } from "gsap";
@@ -36,11 +38,12 @@ const Root = () => {
   const { width, height } = useWindowSize();
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(-4.519826387285736);
-  const [lat, setLat] = useState(48.387655837383534);
+  const [lng, setLng] = useState(-4.51990);
+  const [lat, setLat] = useState(48.38742);
   const [zoom, setZoom] = useState(18);
 
-  const [currentChapter, setCurrentChapter] = useState(0);
+  const [geojson, setGeojson] = useState(null);
+  const [currentChapter, setCurrentChapter] = useState(null);
 
   const [debug, setDebug] = useState(0);
 
@@ -197,29 +200,32 @@ const Root = () => {
         closeOnClick: false,
       });
 
+      map.current.on('zoomend', function() {
+        setDebug(debug + map.current.getZoom()+ map.current.getCenter())
+      });
+
       map.current.on("click", "indoor-rooms", (e) => {
         if (e.features.length > 0) {
-          console.log("ROOMS", e.features)
+          console.log("ROOMS", e.features[0])
         }
       });
 
       map.current.on("click", "indoor-areas", (e) => {
         if (e.features.length > 0) {
-          console.log("AREAS", e.features)
-          // map.current.getCanvas().style.cursor = "pointer";
+          map.current.getCanvas().style.cursor = "pointer";
 
-          // const layerName = e.features[0].layer.id;
-          // const coordinates = e.features[0].geometry.coordinates.slice();
-          // const description = e.features[0].properties.description;
-          // const polygonId = e.features[0].id;
+          const layerName = e.features[0].layer.id;
+          const coordinates = e.features[0].geometry.coordinates.slice();
+          const description = e.features[0].properties.description;
+          const polygonId = e.features[0].id;
 
-          // map.current.setPaintProperty(layerName, "fill-color", [
-          //   "match",
-          //   ["id"],
-          //   polygonId,
-          //   "red",
-          //   "blue",
-          // ]);
+          map.current.setPaintProperty(layerName, "fill-color", [
+            "match",
+            ["id"],
+            polygonId,
+            "red",
+            "blue",
+          ]);
         }
       });
 
@@ -230,16 +236,16 @@ const Root = () => {
       if (map.current.indoor.getSelectedMap()) {
         map.current.indoor.setLevel(1);
       }
-      console.log(map.current.indoor)
     });
     addIndoorTo(map.current);
-    
+
     const geojsonArray = [];
 
     geojsonArray.push(sols);
     geojsonArray.push(gradins);
     geojsonArray.push(nmin2);
     geojsonArray.push(nmin1);
+    geojsonArray.push(sieges);
     geojsonArray.push(n0);
     geojsonArray.push(n1);
 
@@ -249,6 +255,8 @@ const Root = () => {
         return allFeatures.concat(geojsonData.features);
       }, []),
     };
+    setGeojson(geojson)
+    filtersByDatas(geojson)
 
     map.current.indoor.addMap(IndoorMap.fromGeojson(geojson));
     //map.current.fire('indoor.map.loaded', map.current.indoor);
@@ -265,10 +273,12 @@ const Root = () => {
     const easeTo = chapters[currentChapter].easeTo;
     setDebug(`${chapters[currentChapter].level}`);
     const level = chapters[currentChapter].level;
-    // map.current.easeTo({
-    //   ...easeTo,
-    //   padding: { top: 10, bottom: 25, left: 5, right: 5 },
-    // });
+    map.current.easeTo({
+      ...easeTo,
+      padding: { top: 10, bottom: 25, left: 5, right: 5 },
+    });
+
+    console.log(map.current.indoor.getSelectedMap())
 
     if (map.current.indoor.getSelectedMap()) {
       map.current.indoor.setLevel(level);

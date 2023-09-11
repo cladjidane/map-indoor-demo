@@ -1,3 +1,4 @@
+import mapboxgl from "mapbox-gl";
 import { default as turfDistance } from "@turf/distance";
 import IndoorMap from "./IndoorMap";
 import { overlap, filterWithLevel, bboxCenter } from "./Utils";
@@ -126,7 +127,21 @@ class IndoorLayer {
     }
 
     this._savedFilters.forEach(({ layerId, filter }) => {
-      this._map.setFilter(layerId, filterFn(filter));
+      //this._map.setFilter(layerId, filterFn(filter));
+      //console.log(mapboxgl.filterFeatures(filterFn(filter)))
+
+      // Expression de filtre existante
+
+      // Expression modifiée pour renvoyer 0 (masqué) ou 1 (visible)
+      const opacityExpression = [
+        "case",
+        filterFn(filter),  // Si le filtre est satisfait
+        0,               // Opacité 0 (masqué)
+        1                // Opacité 1 (visible)
+      ];
+      console.log(filterFn(filter), layerId)
+      if(layerId === "indoor-areass") this._map.setPaintProperty(layerId, "fill-opacity", opacityExpression);
+      else this._map.setFilter(layerId, filterFn(filter));
     });
   }
 
@@ -189,7 +204,7 @@ class IndoorLayer {
     }
 
     const { geojson, layers, levelsRange, beforeLayerId } = indoorMap;
-    console.log(geojson, layers, levelsRange, beforeLayerId, "************")
+    //console.log(geojson, layers, levelsRange, beforeLayerId, "************")
 
     // Add map source
     this._map.addSource(SOURCE_ID, {
