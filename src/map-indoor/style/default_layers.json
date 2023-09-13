@@ -112,14 +112,7 @@
         ["has", "fill-color"],
         ["get", "fill-color"],
         "#000"
-      ],
-      "fill-opacity": {
-        "base": 1,
-        "stops": [
-          [15, 0],
-          [16, 1]
-        ]
-      }
+      ]
     }
   },
   {
@@ -136,12 +129,7 @@
         ["get", "line-color"],
         "#000"
       ],
-      "line-width": [
-        "case",
-        ["has", "line-width"],
-        ["get", "line-width"],
-        20
-      ],
+      "line-width": ["case", ["has", "line-width"], ["get", "line-width"], 20],
       "line-blur": 20,
       "line-opacity": 0.3
     }
@@ -154,17 +142,10 @@
     "paint": {
       "fill-color": [
         "case",
-        ["has", "fill-color"],
-        ["get", "fill-color"],
-        "#e94e1b"
-      ],
-      "fill-opacity": {
-        "base": 1,
-        "stops": [
-          [15, 0],
-          [16, 1]
-        ]
-      }
+        ["boolean", ["feature-state", "hover"], false],
+        "#e74e0e",
+        ["case", ["has", "fill-color"], ["get", "fill-color"], "#4f4f4f"]
+      ]
     }
   },
   {
@@ -173,18 +154,13 @@
     "type": "line",
     "source": "indoor",
     "paint": {
-       "line-color": [
+      "line-color": [
         "case",
         ["has", "line-color"],
         ["get", "line-color"],
         "white"
       ],
-      "line-width": [
-        "case",
-        ["has", "line-width"],
-        ["get", "line-width"],
-       1
-      ],
+      "line-width": ["case", ["has", "line-width"], ["get", "line-width"], 1],
       "line-opacity": {
         "base": 1,
         "stops": [
@@ -199,17 +175,21 @@
     "id": "indoor-seating-borders",
     "type": "line",
     "source": "indoor",
-    "layout": {"line-cap": "round"},
+    "layout": { "line-cap": "round" },
     "paint": {
       "line-color": "black",
       "line-width": [
         "interpolate",
         ["linear"],
         ["zoom"],
-        18, 1.5,
-        19, 3,
-        20, 6,
-        21, 9
+        18,
+        1.5,
+        19,
+        3,
+        20,
+        6,
+        21,
+        9
       ],
       "line-dasharray": [0.5, 1.5],
       "line-opacity": {
@@ -527,7 +507,7 @@
       "text-letter-spacing": 0.02,
       "text-max-width": 8
     },
-    "filter": ["filter-==", "indoor", "room"],
+    "filter": ["filter-==", "indoor", "room---"],
     "type": "symbol",
     "source": "indoor",
     "id": "poi-indoor-text-ref",

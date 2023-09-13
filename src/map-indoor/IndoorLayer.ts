@@ -139,7 +139,6 @@ class IndoorLayer {
         0,               // Opacité 0 (masqué)
         1                // Opacité 1 (visible)
       ];
-      console.log(filterFn(filter), layerId)
       if(layerId === "indoor-areass") this._map.setPaintProperty(layerId, "fill-opacity", opacityExpression);
       else this._map.setFilter(layerId, filterFn(filter));
     });
@@ -210,9 +209,11 @@ class IndoorLayer {
     this._map.addSource(SOURCE_ID, {
       type: "geojson",
       data: geojson,
+      'generateId': true
     });
 
     // Add layers and save filters
+    console.log('ajout des layers', layers)
     layers.forEach((layer) => this._addLayerForFiltering(layer, beforeLayerId));
 
     // Hide layers which can overlap for rendering

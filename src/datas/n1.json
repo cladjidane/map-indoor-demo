@@ -10,7 +10,8 @@
         "name": "Pièces enceinte n1 arène",
         "desc": null,
         "level": "1",
-        "fill-color": "#e94e1b"
+        "fill-color": "#e94e1b",
+        "id": "ID_8436"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -51,7 +52,8 @@
         "name": "Pièces enceinte n1 arène",
         "desc": null,
         "level": "1",
-        "fill-color": "#e94e1b"
+        "fill-color": "#e94e1b",
+        "id": "ID_6453"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -488,7 +490,8 @@
         "name": "Pièces enceinte n1 arène",
         "desc": null,
         "level": "1",
-        "fill-color": "#e94e1b"
+        "fill-color": "#e94e1b",
+        "id": "ID_9237"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1501,7 +1504,8 @@
         "name": "Pièces enceinte n1 arène",
         "desc": null,
         "level": "1",
-        "fill-color": "#e94e1b"
+        "fill-color": "#e94e1b",
+        "id": "ID_1564"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2610,7 +2614,8 @@
         "name": "Pièces enceinte n1 arène",
         "desc": null,
         "level": "1",
-        "fill-color": "#e94e1b"
+        "fill-color": "#e94e1b",
+        "id": "ID_2943"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2651,7 +2656,8 @@
         "name": "Pièces enceinte n1 arène",
         "desc": null,
         "level": "1",
-        "fill-color": "#e94e1b"
+        "fill-color": "#e94e1b",
+        "id": "ID_5698"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2708,7 +2714,8 @@
         "name": "Pièces enceinte n1 arène",
         "desc": null,
         "level": "1",
-        "fill-color": "#e94e1b"
+        "fill-color": "#e94e1b",
+        "id": "ID_2949"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2757,7 +2764,8 @@
         "name": "Pièces enceinte n1 arène",
         "desc": null,
         "level": "1",
-        "fill-color": "#e94e1b"
+        "fill-color": "#e94e1b",
+        "id": "ID_9783"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3866,7 +3874,8 @@
         "name": "Pièces enceinte n1 arène",
         "desc": null,
         "level": "1",
-        "fill-color": "#e94e1b"
+        "fill-color": "#e94e1b",
+        "id": "ID_3962"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -4303,7 +4312,8 @@
         "name": "Pièces enceinte n1 arène",
         "desc": null,
         "level": "1",
-        "fill-color": "#e94e1b"
+        "fill-color": "#e94e1b",
+        "id": "ID_5867"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -5508,7 +5518,8 @@
         "name": "Pièces enceinte n1 arène",
         "desc": null,
         "level": "1",
-        "fill-color": "#e94e1b"
+        "fill-color": "#e94e1b",
+        "id": "ID_1206"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -5549,7 +5560,8 @@
         "name": "Pièces enceinte n1 arène",
         "desc": null,
         "level": "1",
-        "fill-color": "#e94e1b"
+        "fill-color": "#e94e1b",
+        "id": "ID_2938"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -5590,7 +5602,8 @@
         "name": "Pièces enceinte n1 arène",
         "desc": null,
         "level": "1",
-        "fill-color": "#e94e1b"
+        "fill-color": "#e94e1b",
+        "id": "ID_7604"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -6027,7 +6040,8 @@
         "name": "Pièces enceinte n1 arène",
         "desc": null,
         "level": "1",
-        "fill-color": "#e94e1b"
+        "fill-color": "#e94e1b",
+        "id": "ID_9105"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -6068,7 +6082,8 @@
         "name": "Pièces enceinte n1 arène",
         "desc": null,
         "level": "1",
-        "fill-color": "#e94e1b"
+        "fill-color": "#e94e1b",
+        "id": "ID_7328"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -7273,7 +7288,8 @@
         "name": "Pièces enceinte n1 arène",
         "desc": null,
         "level": "1",
-        "fill-color": "#e94e1b"
+        "fill-color": "#e94e1b",
+        "id": "ID_6801"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -8478,7 +8494,8 @@
         "name": "Pièces enceinte n1 arène",
         "desc": null,
         "level": "1",
-        "fill-color": "#e94e1b"
+        "fill-color": "#e94e1b",
+        "id": "ID_2027"
       },
       "geometry": {
         "type": "MultiPolygon",

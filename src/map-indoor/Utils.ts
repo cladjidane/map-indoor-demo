@@ -109,5 +109,5 @@ export function filtersByDatas(datas: any) {
     cats: Array.from(uniqueCatsByLayer[layer]),
   }));
 
-  console.log(result);
+  //console.log(result);
 }

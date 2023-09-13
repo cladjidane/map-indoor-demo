@@ -15,7 +15,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7576"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -41,7 +42,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8572"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -67,7 +69,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9363"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -93,7 +96,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3901"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -119,7 +123,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9118"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -145,7 +150,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4361"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -171,7 +177,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3823"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -197,7 +204,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6446"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -223,7 +231,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5239"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -249,7 +258,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9122"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -275,7 +285,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4321"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -301,7 +312,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5157"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -327,7 +339,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6265"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -353,7 +366,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8223"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -379,7 +393,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4368"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -405,7 +420,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5630"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -431,7 +447,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8302"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -457,7 +474,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2475"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -483,7 +501,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7984"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -509,7 +528,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6073"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -535,7 +555,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5112"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -561,7 +582,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3816"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -587,7 +609,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3478"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -613,7 +636,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1965"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -639,7 +663,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2597"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -665,7 +690,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9240"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -691,7 +717,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9225"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -933,7 +960,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3658"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -1079,7 +1107,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_189"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -1105,7 +1134,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_808"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -1131,7 +1161,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8627"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -1157,7 +1188,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8272"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -1399,7 +1431,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7386"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -1545,7 +1578,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5662"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -1691,7 +1725,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4915"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -1933,7 +1968,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4627"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -2175,7 +2211,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8598"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -2201,7 +2238,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3123"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -2443,7 +2481,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3864"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -2589,7 +2628,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_64"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -2831,7 +2871,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9422"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -2977,7 +3018,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8645"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -3219,7 +3261,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9285"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -3365,7 +3408,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7641"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -3607,7 +3651,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4738"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -3633,7 +3678,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1476"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -3779,7 +3825,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8835"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -4021,7 +4068,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_488"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -4167,7 +4215,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1364"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -4409,7 +4458,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1169"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -4651,7 +4701,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9909"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -4797,7 +4848,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4799"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -4943,7 +4995,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4778"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -5089,7 +5142,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8207"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -5115,7 +5169,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6049"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -5261,7 +5316,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6359"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -5503,7 +5559,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_944"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -5745,7 +5802,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4133"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -5891,7 +5949,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2449"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -6133,7 +6192,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6475"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -6279,7 +6339,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3264"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -6425,7 +6486,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2909"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -6571,7 +6633,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4954"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -6813,7 +6876,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4143"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -6839,7 +6903,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4685"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -7081,7 +7146,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3081"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -7323,7 +7389,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5746"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -7565,7 +7632,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_995"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -7807,7 +7875,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7773"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -7953,7 +8022,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6725"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -8195,7 +8265,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8237"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -8221,7 +8292,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_374"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -8463,7 +8535,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5309"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -8705,7 +8778,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_381"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -8851,7 +8925,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8375"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -9093,7 +9168,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2223"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -9335,7 +9411,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9567"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -9361,7 +9438,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6865"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -9603,7 +9681,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_847"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -9845,7 +9924,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_876"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -9991,7 +10071,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7049"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -10137,7 +10218,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6407"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -10163,7 +10245,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3592"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -10405,7 +10488,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_25"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -10647,7 +10731,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1423"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -10889,7 +10974,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6287"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -11035,7 +11121,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7419"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -11181,7 +11268,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8361"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -11423,7 +11511,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1279"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -11665,7 +11754,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5268"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -11907,7 +11997,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3244"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -11933,7 +12024,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8061"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -12175,7 +12267,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9963"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -12321,7 +12414,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7652"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -12467,7 +12561,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6243"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -12709,7 +12804,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_833"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -12855,7 +12951,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6338"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -13001,7 +13098,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4936"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -13243,7 +13341,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5815"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -13485,7 +13584,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1183"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -13727,7 +13827,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6644"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -13753,7 +13854,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4802"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -13995,7 +14097,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4101"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -14021,7 +14124,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6155"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -14047,7 +14151,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3844"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -14289,7 +14394,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3753"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -14531,7 +14637,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2978"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -14773,7 +14880,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4088"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -15015,7 +15123,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8680"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -15161,7 +15270,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3975"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -15403,7 +15513,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7227"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -15549,7 +15660,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9517"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -15791,7 +15903,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8269"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -15937,7 +16050,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5852"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -16179,7 +16293,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4574"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -16325,7 +16440,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1345"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -16567,7 +16683,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3187"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -16713,7 +16830,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8011"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -16859,7 +16977,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3861"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -17005,7 +17124,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6522"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -17247,7 +17367,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5785"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -17393,7 +17514,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2602"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -17539,7 +17661,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5048"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -17685,7 +17808,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4901"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -17927,7 +18051,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_817"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -18169,7 +18294,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2539"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -18315,7 +18441,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1532"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -18461,7 +18588,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5209"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -18607,7 +18735,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5929"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -18849,7 +18978,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4904"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -18995,7 +19125,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1256"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -19141,7 +19272,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6578"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -19287,7 +19419,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3213"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -19529,7 +19662,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2643"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -19771,7 +19905,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5464"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -19917,7 +20052,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1450"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -20063,7 +20199,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2618"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -20209,7 +20346,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5104"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -20451,7 +20589,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_620"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -20597,7 +20736,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6654"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -20743,7 +20883,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3804"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -20889,7 +21030,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2518"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21131,7 +21273,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4102"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21157,7 +21300,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5293"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21183,7 +21327,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6707"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21209,7 +21354,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6864"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21235,7 +21381,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5297"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21261,7 +21408,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1195"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21287,7 +21435,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3179"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21313,7 +21462,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6713"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21339,7 +21489,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_626"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21365,7 +21516,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2206"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21391,7 +21543,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1807"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21417,7 +21570,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1260"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21443,7 +21597,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7891"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21469,7 +21624,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9610"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21495,7 +21651,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4712"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21521,7 +21678,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5081"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21547,7 +21705,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9746"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21573,7 +21732,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_931"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21599,7 +21759,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4153"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21625,7 +21786,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4817"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21651,7 +21813,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7535"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21677,7 +21840,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3599"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21703,7 +21867,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3030"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21729,7 +21894,8 @@
         "indoor": "seating",
         "level": "0;1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3091"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21755,7 +21921,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6804"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -21781,7 +21948,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4818"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -22023,7 +22191,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3008"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -22169,7 +22338,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5434"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -22411,7 +22581,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3829"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -22653,7 +22824,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2168"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -22679,7 +22851,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2942"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -22921,7 +23094,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5770"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -23163,7 +23337,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4162"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -23189,7 +23364,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8138"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -23215,7 +23391,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4476"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -23361,7 +23538,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2676"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -23795,7 +23973,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5328"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -24037,7 +24216,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5646"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -24471,7 +24651,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6511"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -24617,7 +24798,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2703"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -24643,7 +24825,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3038"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -24789,7 +24972,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5138"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -24815,7 +24999,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5316"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -24841,7 +25026,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2991"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -24867,7 +25053,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7061"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -25109,7 +25296,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6290"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -25255,7 +25443,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1832"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -25593,7 +25782,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2586"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -25619,7 +25809,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7025"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -25645,7 +25836,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8711"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -25983,7 +26175,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3711"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -26129,7 +26322,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2281"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -26275,7 +26469,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7009"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -26421,7 +26616,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6753"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -26567,7 +26763,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5367"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -26593,7 +26790,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5821"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -26739,7 +26937,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1359"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -26765,7 +26964,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7661"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -27199,7 +27399,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2936"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -27537,7 +27738,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2350"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -27563,7 +27765,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8079"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -27709,7 +27912,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4872"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -27951,7 +28155,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_358"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -28193,7 +28398,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9722"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -28435,7 +28641,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8769"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -28581,7 +28788,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7645"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -28727,7 +28935,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7050"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -28873,7 +29082,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2093"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -29307,7 +29517,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9314"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -29333,7 +29544,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9987"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -29575,7 +29787,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4229"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -29817,7 +30030,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4470"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -30059,7 +30273,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7853"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -30085,7 +30300,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8757"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -30327,7 +30543,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_31"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -30353,7 +30570,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7213"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -30499,7 +30717,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_134"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -30837,7 +31056,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4268"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -31175,7 +31395,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7657"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -31201,7 +31422,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2499"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -31347,7 +31569,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9874"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -31373,7 +31596,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8510"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -31519,7 +31743,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1185"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -31665,7 +31890,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9511"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -32003,7 +32229,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2078"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -32029,7 +32256,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5863"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -32175,7 +32403,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5279"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -32321,7 +32550,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6907"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -32755,7 +32985,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1330"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -32781,7 +33012,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8051"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -32927,7 +33159,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_775"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -33169,7 +33402,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6057"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -33507,7 +33741,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7449"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -33653,7 +33888,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4966"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -33991,7 +34227,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1324"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -34137,7 +34374,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_909"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -34163,7 +34401,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6478"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -34189,7 +34428,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_603"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -34431,7 +34671,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4873"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -34457,7 +34698,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7162"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -34603,7 +34845,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_559"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -34845,7 +35088,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1629"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -35183,7 +35427,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6752"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -35425,7 +35670,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5577"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -35571,7 +35817,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_2407"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -35813,7 +36060,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_9266"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -35839,7 +36087,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4326"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -35865,7 +36114,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3943"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -35891,7 +36141,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3087"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -36229,7 +36480,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6040"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -36375,7 +36627,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3587"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -36617,7 +36870,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_1810"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -36859,7 +37113,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_774"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -37005,7 +37260,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7770"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -37151,7 +37407,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4213"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -37177,7 +37434,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5789"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -37323,7 +37581,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4215"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -37661,7 +37920,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_7813"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -37807,7 +38067,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_8781"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -38049,7 +38310,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3253"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -38075,7 +38337,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5368"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -38509,7 +38772,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_5471"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -38847,7 +39111,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_619"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -38993,7 +39258,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_46"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -39139,7 +39405,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_4446"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -39165,7 +39432,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_3040"
       },
       "geometry": {
         "type": "MultiLineString",
@@ -39407,7 +39675,8 @@
         "indoor": "seating",
         "level": "1",
         "name": null,
-        "desc": null
+        "desc": null,
+        "id": "ID_6225"
       },
       "geometry": {
         "type": "MultiLineString",

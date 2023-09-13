@@ -12,7 +12,8 @@
         "desc": null,
         "level": "-1",
         "fill-color": "#f6f6f6",
-        "line-width": 0
+        "line-width": 0,
+        "id": "ID_5952"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1317,7 +1318,8 @@
         "indoor": "room",
         "name": "Vide",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_4103"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1756,7 +1758,8 @@
         "desc": null,
         "level": "-1",
         "fill-color": "#f6f6f6",
-        "line-width": 0
+        "line-width": 0,
+        "id": "ID_6780"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1827,7 +1830,8 @@
         "indoor": "room",
         "name": "Bureaux Brest Arena",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_6906"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1870,7 +1874,8 @@
         "indoor": "room",
         "name": "Loge 1",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_5585"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1913,7 +1918,8 @@
         "indoor": "room",
         "name": "Loge 4",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_3251"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1956,7 +1962,8 @@
         "indoor": "room",
         "name": "Loge 5",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_7012"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1999,7 +2006,8 @@
         "indoor": "room",
         "name": "Salle réunion",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_3909"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2042,7 +2050,8 @@
         "desc": null,
         "level": "-1",
         "fill-color": "#f6f6f6",
-        "line-width": 0
+        "line-width": 0,
+        "id": "ID_5915"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2085,7 +2094,8 @@
         "indoor": "room",
         "name": "Tribune salle annexe",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_4525"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2128,7 +2138,8 @@
         "desc": null,
         "level": "-1",
         "fill-color": "#f6f6f6",
-        "line-width": 0
+        "line-width": 0,
+        "id": "ID_8176"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2179,7 +2190,8 @@
         "indoor": "room",
         "name": "Bureaux",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_3323"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2230,7 +2242,8 @@
         "indoor": "room",
         "name": "Loge 2 et 3",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_2468"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2277,7 +2290,8 @@
         "indoor": "room",
         "name": "Accès terrain",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_448"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2320,7 +2334,8 @@
         "indoor": "room",
         "name": "Salle de production",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_9605"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2363,7 +2378,8 @@
         "indoor": "room",
         "name": "Bureau",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_5079"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2406,7 +2422,8 @@
         "indoor": "room",
         "name": "Salle réunion Brest Arena",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_4068"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2449,7 +2466,8 @@
         "indoor": "room",
         "name": "Bureau Brest Arena",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_9686"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2492,7 +2510,8 @@
         "indoor": "room",
         "name": "Escaliers",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_9790"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3123,7 +3142,8 @@
         "indoor": "room",
         "name": "Escaliers",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_6519"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3754,7 +3774,8 @@
         "indoor": "room",
         "name": "Club BBH",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_1994"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3801,7 +3822,8 @@
         "indoor": "room",
         "name": "Bureaux",
         "desc": null,
-        "level": "-1"
+        "level": "-1",
+        "id": "ID_3607"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3844,7 +3866,8 @@
         "desc": null,
         "level": "-1",
         "fill-color": "#f6f6f6",
-        "line-width": 0
+        "line-width": 0,
+        "id": "ID_5442"
       },
       "geometry": {
         "type": "MultiPolygon",

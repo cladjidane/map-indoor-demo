@@ -10,7 +10,8 @@
         "name": "Zone Sol BA Niveau -2",
         "desc": null,
         "level": "-2;1",
-        "fill-color": "#dcdcdc"
+        "fill-color": "#dcdcdc",
+        "id": "ID_6192"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -135,7 +136,8 @@
         "name": "Sol Brest Arena Niveau -2",
         "desc": null,
         "level": "-2;-1",
-        "fill-color": "white"
+        "fill-color": "white",
+        "id": "ID_1683"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -206,7 +208,8 @@
         "level": "0;1",
         "fill-color": "white",
         "shadow": true,
-        "line-width": 5
+        "line-width": 5,
+        "id": "ID_7527"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -429,7 +432,8 @@
         "name": "Sol Brest Arena Niveau -2",
         "desc": null,
         "level": "-2",
-        "fill-color": "white"
+        "fill-color": "white",
+        "id": "ID_3235"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -500,7 +504,8 @@
         "level": "0;1",
         "fill-color": "#ededed",
         "shadow": true,
-        "line-width": 5
+        "line-width": 5,
+        "id": "ID_3240"
       },
       "geometry": {
         "type": "MultiPolygon",

@@ -10,7 +10,8 @@
         "name": "Tribune basse ULTRA",
         "desc": null,
         "level": "0;1",
-        "fill-color": "#d1d1d1"
+        "fill-color": "#d1d1d1",
+        "id": "ID_9358"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -52,7 +53,8 @@
         "desc": null,
         "level": "0;1",
         "fill-color": "#d1d1d1",
-        "line-width": 10
+        "line-width": 10,
+        "id": "ID_5578"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1868,7 +1870,8 @@
         "desc": null,
         "level": "1",
         "fill-color": "#f8f8f8",
-        "shadow": true
+        "shadow": true,
+        "id": "ID_4419"
       },
       "geometry": {
         "type": "MultiPolygon",

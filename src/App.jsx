@@ -1,6 +1,7 @@
 import "mapbox-gl/dist/mapbox-gl.css";
 
 import * as React from "react";
+import ReactDOMServer from 'react-dom/server';
 import * as turf from "@turf/turf";
 
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -9,38 +10,42 @@ import {
   IndoorMap,
   IndoorControl,
   IndoorLayer,
-} from "../map-indoor"; // dossier ts pas le compoenent
+} from "./map-indoor"; // dossier ts pas le compoenent
 import { useWindowSize } from "usehooks-ts";
 
-import Drawer from "../components/Drawer";
-import { filtersByDatas } from "../map-indoor/Utils";
+import MapboxPopup from "./components/MapboxPopup";
+import { filtersByDatas } from "./map-indoor/Utils";
 
-import n0 from "../datas/n0.json";
-import n1 from "../datas/n1.json";
-import nmin1 from "../datas/n-1.json";
-import nmin2 from "../datas/n-2.json";
-import sols from "../datas/sols.json";
-import gradins from "../datas/gradins.json";
-import sieges from "../datas/sieges.json";
+import n0 from "./datas/n0.json";
+import n1 from "./datas/n1.json";
+import nmin1 from "./datas/n-1.json";
+import nmin2 from "./datas/n-2.json";
+import sols from "./datas/sols.json";
+import gradins from "./datas/gradins.json";
+import sieges from "./datas/sieges.json";
+import states from "./datas/states.json";
 
 import mapboxgl from "mapbox-gl";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-import chapters from "../chapters.json";
+import chapters from "./chapters.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiamVvZnVuIiwiYSI6ImNrd3huZXZjMzAwMWkycXFtb29zeDMxdnMifQ.N0SyKbZ6Br7bCL0IPmUZIg";
 
-const Root = () => {
+const App = () => {
   const { width, height } = useWindowSize();
   const mapContainer = useRef(null);
+  const popup = useRef(null);
+
   const map = useRef(null);
-  const [lng, setLng] = useState(-4.51990);
-  const [lat, setLat] = useState(48.38742);
-  const [zoom, setZoom] = useState(18);
+  const [lng, setLng] = useState(-4.519816876493678);
+  const [lat, setLat] = useState(48.38748232729199);
+
+  const [zoom, setZoom] = useState(17);
 
   const [geojson, setGeojson] = useState(null);
   const [currentChapter, setCurrentChapter] = useState(null);
@@ -61,7 +66,7 @@ const Root = () => {
 
   useEffect(() => {
     const el = document.getElementById("section-map");
-    el.querySelectorAll("ul").forEach((section, index) => {
+    el.querySelectorAll(".menu-map").forEach((section, index) => {
       ScrollTrigger.create({
         trigger: section,
         start: "top center",
@@ -114,41 +119,24 @@ const Root = () => {
     map.current.scrollZoom.disable();
 
     map.current.on("load", function () {
-      // map.current.addSource("transports", {
+      // map.current.addSource("states", {
       //   type: "geojson",
-      //   data: transports,
+      //   data: states,
       // });
 
       // map.current.addLayer({
-      //   id: "transports-lines", // Layer ID
-      //   type: "line",
-      //   source: "transports",
-      //   layout: {
-      //     "line-cap": "round",
-      //     "line-join": "round",
-      //   },
+      //   id: "state-fills",
+      //   type: "fill",
+      //   source: "states",
+      //   layout: {},
       //   paint: {
-      //     "line-opacity": {
-      //       base: 1,
-      //       stops: [
-      //         [11, 0],
-      //         [12, 1],
-      //         [15, 1],
-      //         [16, 0],
-      //       ],
-      //     },
-      //     "line-color": [
-      //       "match",
-      //       ["get", "route"],
-      //       "tram",
-      //       "red",
-      //       "bus",
-      //       "green",
-      //       "bicycle",
-      //       "blue",
-      //       "black",
+      //     "fill-color": "#627BC1",
+      //     "fill-opacity": [
+      //       "case",
+      //       ["boolean", ["feature-state", "hover"], false],
+      //       1,
+      //       0.5,
       //     ],
-      //     "line-width": 2,
       //   },
       // });
 
@@ -195,42 +183,94 @@ const Root = () => {
       // });
 
       // Create a popup, but don't add it to the map yet.
-      const popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false,
+
+      // const popup = new mapboxgl.Popup({
+      //   closeButton: false,
+      //   closeOnClick: false,
+      // }).setDOMContent(<MapboxPopup />);
+
+      map.current.on("zoomend", function () {
+        setDebug(debug + map.current.getZoom() + map.current.getCenter());
       });
 
-      map.current.on('zoomend', function() {
-        setDebug(debug + map.current.getZoom()+ map.current.getCenter())
-      });
+      // map.current.on("click", "indoor-rooms", (e) => {
+      //   if (e.features.length > 0) {
+      //     console.log("ROOMS", e.features[0]);
+      //   }
+      // });
 
-      map.current.on("click", "indoor-rooms", (e) => {
+      // map.current.on("click", "indoor-areas", (e) => {
+      //   if (e.features.length > 0) {
+      //     map.current.getCanvas().style.cursor = "pointer";
+
+      //     const layerName = e.features[0].layer.id;
+      //     // const coordinates = e.features[0].geometry.coordinates.slice();
+      //     // const description = e.features[0].properties.description;
+      //     const polygonId = e.features[0].properties.id;
+
+      //     console.log(e.features[0]);
+
+      //     map.current.setPaintProperty(layerName, "fill-color", [
+      //       "match",
+      //       ["id"],
+      //       polygonId,
+      //       "red",
+      //       "blue",
+      //     ]);
+      //   }
+      // });
+
+      let hoveredPolygonId = null;
+
+      map.current.on("mouseenter", "indoor-rooms", (e) => {
+        map.current.getCanvas().style.cursor = "pointer";
+        const properties = e.features[0].properties;
+        const coordinates = turf.centroid(e.features[0]).geometry.coordinates;
+
         if (e.features.length > 0) {
-          console.log("ROOMS", e.features[0])
+          if (hoveredPolygonId !== null) {
+            map.current.setFeatureState(
+              {
+                source: "indoor",
+                id: hoveredPolygonId,
+              },
+              { hover: false }
+            );
+          }
+          hoveredPolygonId = e.features[0].id;
+          map.current.setFeatureState(
+            {
+              source: "indoor",
+              id: hoveredPolygonId,
+            },
+            { hover: true }
+          );
+
+          if (popup.current) {
+            popup.current.remove();
+          }
+
+          const popupContent = ReactDOMServer.renderToString(<MapboxPopup properties={properties} />);
+
+          popup.current = new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(popupContent)
+            .addTo(map.current);
         }
       });
 
-      map.current.on("click", "indoor-areas", (e) => {
-        if (e.features.length > 0) {
-          map.current.getCanvas().style.cursor = "pointer";
-
-          const layerName = e.features[0].layer.id;
-          const coordinates = e.features[0].geometry.coordinates.slice();
-          const description = e.features[0].properties.description;
-          const polygonId = e.features[0].id;
-
-          map.current.setPaintProperty(layerName, "fill-color", [
-            "match",
-            ["id"],
-            polygonId,
-            "red",
-            "blue",
-          ]);
+      map.current.on("mouseleave", "indoor-rooms", (e) => {
+        map.current.getCanvas().style.cursor = "";
+        if (hoveredPolygonId !== null) {
+          map.current.setFeatureState(
+            {
+              source: "indoor",
+              id: hoveredPolygonId,
+            },
+            { hover: false }
+          );
         }
-      });
-
-      map.current.on("mouseleave", "indoor-areas, indoor-rooms", () => {
-        map.current.getCanvas().style.cursor = "auto";
+        hoveredPolygonId = null;
       });
 
       if (map.current.indoor.getSelectedMap()) {
@@ -255,13 +295,12 @@ const Root = () => {
         return allFeatures.concat(geojsonData.features);
       }, []),
     };
-    setGeojson(geojson)
-    filtersByDatas(geojson)
+    setGeojson(geojson);
+    filtersByDatas(geojson);
 
     map.current.indoor.addMap(IndoorMap.fromGeojson(geojson));
     //map.current.fire('indoor.map.loaded', map.current.indoor);
     map.current.addControl(new IndoorControl());
-
 
     //return ScrollTrigger.refresh()
   }, []);
@@ -275,10 +314,8 @@ const Root = () => {
     const level = chapters[currentChapter].level;
     map.current.easeTo({
       ...easeTo,
-      padding: { top: 10, bottom: 25, left: 5, right: 5 },
+      padding: { top: 10, bottom: 25, left: width / 3, right: 5 },
     });
-
-    console.log(map.current.indoor.getSelectedMap())
 
     if (map.current.indoor.getSelectedMap()) {
       map.current.indoor.setLevel(level);
@@ -299,4 +336,4 @@ const Root = () => {
   );
 };
 
-export default Root;
+export default App;

@@ -1,17 +1,6 @@
 [
   {
-    "id":1,
-    "title": "Niveau 1",
-    "easeTo": {
-      "center": [-4.51990, 48.38742],
-      "zoom": 18,
-      "duration": 2000
-    },
-    "level": 1,
-    "layersVisible": []
-  },
-  {
-    "id": 2,
+    "id": 1,
     "title": "Niveau 0",
     "easeTo": {
       "center": [-4.5199429029746625, 48.38733630628701],
@@ -22,7 +11,7 @@
     "layersVisible": []
   },
   {
-    "id": 3,
+    "id": 2,
     "title": "Niveau bureaux",
     "easeTo": {
       "center": [-4.519970391082211, 48.38760636294535],
@@ -33,7 +22,7 @@
     "layersVisible": []
   },
   {
-    "id": 4,
+    "id": 3,
     "title": "Niveau -2",
     "easeTo": {
       "center": [-4.519816876494929, 48.387482327292275],

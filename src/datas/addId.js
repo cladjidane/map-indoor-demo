@@ -17,18 +17,18 @@ files.forEach((fileName) => {
       const jsonData = JSON.parse(data);
 
       jsonData.features.forEach((item) => {
-        // Générez un nouvel ID unique
-        // let id;
-        // do {
-        //   id = `ID_${Math.floor(Math.random() * 10000)}`;
-        // } while (usedIds.has(id)); // Vérifiez si l'ID est déjà utilisé
+        //Générez un nouvel ID unique
+        let id;
+        do {
+          id = `ID_${Math.floor(Math.random() * 10000)}`;
+        } while (usedIds.has(id)); // Vérifiez si l'ID est déjà utilisé
 
-        // // Ajoutez l'ID à l'ensemble des IDs attribués
-        // usedIds.add(id);
+        // Ajoutez l'ID à l'ensemble des IDs attribués
+        usedIds.add(id);
 
-        // // Ajoutez l'ID à l'objet JSON
-        // item.id = id;
-        item.properties.id = item.id
+        // Ajoutez l'ID à l'objet JSON
+        item.id = id;
+        item.properties.id = id
       });
 
       const updatedData = JSON.stringify(jsonData, null, 2);
