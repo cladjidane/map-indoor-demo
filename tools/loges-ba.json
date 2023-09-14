@@ -1,0 +1,115 @@
+{
+  "type": "FeatureCollection",
+  "name": "n-1",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "cat": ["Loges"],
+        "layer": "N-1_2",
+        "indoor": "room",
+        "name": "Loge 1",
+        "desc": "<p>4 loges individuelles</p><ul><li>2 loges de 18m<sup>2</sup> avec douches</li><li>1 loge de 20m<sup>2</sup></li><li>1 loge de 16m<sup>2</sup></li></ul><p>1 loge collective de 45m<sup>2</sup></p>",
+        "level": "-1",
+        "id": "ID_5585"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [-4.520641711813985, 48.38734837348245],
+              [-4.520601239609376, 48.38738118061204],
+              [-4.520546397521398, 48.387351335694206],
+              [-4.520586875996916, 48.38731853195801],
+              [-4.520641711813985, 48.38734837348245]
+            ]
+          ]
+        ]
+      },
+      "id": "ID_5585"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cat": ["Loges"],
+        "layer": "N-1_2",
+        "indoor": "room",
+        "name": "Loge 4",
+        "desc": "<p>4 loges individuelles</p><ul><li>2 loges de 18m<sup>2</sup> avec douches</li><li>1 loge de 20m<sup>2</sup></li><li>1 loge de 16m<sup>2</sup></li></ul><p>1 loge collective de 45m<sup>2</sup></p>",
+        "level": "-1",
+        "id": "ID_3251"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [-4.520601239609376, 48.38738118061204],
+              [-4.520564119560633, 48.38741127043618],
+              [-4.520509271720721, 48.3873814224058],
+              [-4.520546397521398, 48.387351335694206],
+              [-4.520601239609376, 48.38738118061204]
+            ]
+          ]
+        ]
+      },
+      "id": "ID_3251"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cat": ["Loges"],
+        "layer": "N-1_2",
+        "indoor": "room",
+        "name": "Loge 5",
+        "desc": "<p>4 loges individuelles</p><ul><li>2 loges de 18m<sup>2</sup> avec douches</li><li>1 loge de 20m<sup>2</sup></li><li>1 loge de 16m<sup>2</sup></li></ul><p>1 loge collective de 45m<sup>2</sup></p>",
+        "level": "-1",
+        "id": "ID_7012"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [-4.520564119560633, 48.38741127043618],
+              [-4.520527768037518, 48.38744073740178],
+              [-4.520472914467294, 48.38741088627026],
+              [-4.520509271720721, 48.3873814224058],
+              [-4.520564119560633, 48.38741127043618]
+            ]
+          ]
+        ]
+      },
+      "id": "ID_7012"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "cat": ["Loges"],
+        "layer": "N-1_2",
+        "indoor": "room",
+        "name": "Loge 2 et 3",
+        "desc": "<p>4 loges individuelles</p><ul><li>2 loges de 18m<sup>2</sup> avec douches</li><li>1 loge de 20m<sup>2</sup></li><li>1 loge de 16m<sup>2</sup></li></ul><p>1 loge collective de 45m<sup>2</sup></p>",
+        "level": "-1",
+        "id": "ID_2468"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [-4.520569075010899, 48.38730884469895],
+              [-4.520494218441238, 48.387369528279955],
+              [-4.52037929397099, 48.387306986655716],
+              [-4.520396539822478, 48.38729301061674],
+              [-4.520484766038753, 48.38726296390899],
+              [-4.520569075010899, 48.38730884469895]
+            ]
+          ]
+        ]
+      },
+      "id": "ID_2468"
+    }
+  ]
+}

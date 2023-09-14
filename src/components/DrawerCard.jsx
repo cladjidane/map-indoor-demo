@@ -10,22 +10,22 @@ const Drawer = ({drawerIsOpen, setDrawerIsOpen, drawerContent}) => {
   return (
     <div className="absolute w-1/3 h-full z-[1000] left-0 pointer-events-none">
       <div
-        className={`bg-black text-white rounded-xl w-full shadow-lg m-5 p-5 transition-all transform p-8 ${
+        className={`bg-gray-900 text-white w-full rounded shadow-lg m-5 p-5 transition-all transform ${
           !drawerIsOpen ? "-translate-y-96" : "translate-y-0"
         } `}
       >
-        <img className="w-full h-48 rounded-xl object-cover mb-8" src="https://brestarena.fr/sites/default/files/08062015-_igp4198_benjamin_deroche_bd.jpg" />
-        <h2 className="text-xl font-bold mb-4">{drawerContent.name}</h2>
-        <div
-          dangerouslySetInnerHTML={{__html: drawerContent.desc}}
-        />
+        <h2 className="text-xl font-bold mb-4">Informations</h2>
+
+        <div>
+          <p>{drawerContent && drawerContent.name}</p>
+        </div>
 
         <div
-          className={`absolute right-0 top-2 w-8 transition-all transform border-1 border-red-300 pointer-events-auto`}
+          className={`absolute right-2 top-8 w-8 transition-all transform border-1 border-red-300 pointer-events-auto`}
         >
           <button
             onClick={handleClick}
-            className="border-0 bg-transparent transform -rotate-90"
+            className="border-0 bg-transparent transform rotate-180"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -1,29 +1,26 @@
 import "mapbox-gl/dist/mapbox-gl.css";
 
 import * as React from "react";
-import ReactDOMServer from 'react-dom/server';
+import axios from 'axios';
+
 import * as turf from "@turf/turf";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   addIndoorTo,
   IndoorMap,
-  IndoorControl,
-  IndoorLayer,
+  IndoorControl
 } from "./map-indoor"; // dossier ts pas le compoenent
 import { useWindowSize } from "usehooks-ts";
 
-import MapboxPopup from "./components/MapboxPopup";
+import Drawer from "./components/Drawer"
 import { filtersByDatas } from "./map-indoor/Utils";
 
-import n0 from "./datas/n0.json";
-import n1 from "./datas/n1.json";
 import nmin1 from "./datas/n-1.json";
 import nmin2 from "./datas/n-2.json";
 import sols from "./datas/sols.json";
 import gradins from "./datas/gradins.json";
 import sieges from "./datas/sieges.json";
-import states from "./datas/states.json";
 
 import mapboxgl from "mapbox-gl";
 import { gsap } from "gsap";
@@ -37,14 +34,18 @@ mapboxgl.accessToken =
   "pk.eyJ1IjoiamVvZnVuIiwiYSI6ImNrd3huZXZjMzAwMWkycXFtb29zeDMxdnMifQ.N0SyKbZ6Br7bCL0IPmUZIg";
 
 const App = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
   const { width, height } = useWindowSize();
   const mapContainer = useRef(null);
-  const popup = useRef(null);
+  const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+  const [drawerContent, setDrawerContent] = useState(null);
+
 
   const map = useRef(null);
   const [lng, setLng] = useState(-4.519816876493678);
   const [lat, setLat] = useState(48.38748232729199);
-
   const [zoom, setZoom] = useState(17);
 
   const [geojson, setGeojson] = useState(null);
@@ -53,7 +54,22 @@ const App = () => {
   const [debug, setDebug] = useState(0);
 
   useEffect(() => {
-    if (!map.current) return;
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('/wp-json/k/v1/maps/79');
+        const apiData = response.data;
+        setData(apiData);
+        setLoading(false);
+      } catch (error) {
+        console.error('Erreur lors de la récupération des données depuis l\'API', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    if (!map.current ) return;
     var legendWidth = width / 8; // Largeur du tableau des légendes en pixels
     var originalCenter = [lng, lat];
     var newCenter = map.current.unproject([
@@ -65,6 +81,7 @@ const App = () => {
   }, [width]);
 
   useEffect(() => {
+    if(data === null) return
     const el = document.getElementById("section-map");
     el.querySelectorAll(".menu-map").forEach((section, index) => {
       ScrollTrigger.create({
@@ -119,110 +136,13 @@ const App = () => {
     map.current.scrollZoom.disable();
 
     map.current.on("load", function () {
-      // map.current.addSource("states", {
-      //   type: "geojson",
-      //   data: states,
-      // });
-
-      // map.current.addLayer({
-      //   id: "state-fills",
-      //   type: "fill",
-      //   source: "states",
-      //   layout: {},
-      //   paint: {
-      //     "fill-color": "#627BC1",
-      //     "fill-opacity": [
-      //       "case",
-      //       ["boolean", ["feature-state", "hover"], false],
-      //       1,
-      //       0.5,
-      //     ],
-      //   },
-      // });
-
-      // map.current.addLayer({
-      //   id: "transports-text", // Layer ID
-      //   type: "symbol",
-      //   source: "transports",
-      //   layout: {
-      //     "text-line-height": 1.2,
-      //     "text-size": {
-      //       base: 1,
-      //       stops: [
-      //         [17, 10],
-      //         [20, 12],
-      //       ],
-      //     },
-      //     "text-allow-overlap": false,
-      //     "text-ignore-placement": false,
-      //     "symbol-placement": "line",
-      //     //"text-max-angle": 38,
-      //     "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Regular"],
-      //     "text-padding": 2,
-      //     visibility: "visible",
-      //     //"text-anchor": "center",
-      //     "text-field": "{name}",
-      //     "text-rotation-alignment": "auto",
-      //     "text-letter-spacing": 0.02,
-      //     "text-max-width": 8,
-      //   },
-      //   paint: {
-      //     "text-color": "#65513d",
-      //     "text-halo-color": "#ffffff",
-      //     "text-halo-width": 1,
-      //     "text-opacity": {
-      //       base: 1,
-      //       stops: [
-      //         [9, 0],
-      //         [10, 1],
-      //         [15, 1],
-      //         [16, 0],
-      //       ],
-      //     },
-      //   },
-      // });
-
-      // Create a popup, but don't add it to the map yet.
-
-      // const popup = new mapboxgl.Popup({
-      //   closeButton: false,
-      //   closeOnClick: false,
-      // }).setDOMContent(<MapboxPopup />);
-
       map.current.on("zoomend", function () {
         setDebug(debug + map.current.getZoom() + map.current.getCenter());
       });
 
-      // map.current.on("click", "indoor-rooms", (e) => {
-      //   if (e.features.length > 0) {
-      //     console.log("ROOMS", e.features[0]);
-      //   }
-      // });
-
-      // map.current.on("click", "indoor-areas", (e) => {
-      //   if (e.features.length > 0) {
-      //     map.current.getCanvas().style.cursor = "pointer";
-
-      //     const layerName = e.features[0].layer.id;
-      //     // const coordinates = e.features[0].geometry.coordinates.slice();
-      //     // const description = e.features[0].properties.description;
-      //     const polygonId = e.features[0].properties.id;
-
-      //     console.log(e.features[0]);
-
-      //     map.current.setPaintProperty(layerName, "fill-color", [
-      //       "match",
-      //       ["id"],
-      //       polygonId,
-      //       "red",
-      //       "blue",
-      //     ]);
-      //   }
-      // });
-
       let hoveredPolygonId = null;
 
-      map.current.on("mouseenter", "indoor-rooms", (e) => {
+      map.current.on("mousemove", "indoor-rooms", (e) => {
         map.current.getCanvas().style.cursor = "pointer";
         const properties = e.features[0].properties;
         const coordinates = turf.centroid(e.features[0]).geometry.coordinates;
@@ -245,17 +165,8 @@ const App = () => {
             },
             { hover: true }
           );
-
-          if (popup.current) {
-            popup.current.remove();
-          }
-
-          const popupContent = ReactDOMServer.renderToString(<MapboxPopup properties={properties} />);
-
-          popup.current = new mapboxgl.Popup()
-            .setLngLat(coordinates)
-            .setHTML(popupContent)
-            .addTo(map.current);
+          if(!drawerIsOpen) setDrawerIsOpen(true);
+          setDrawerContent(properties)
         }
       });
 
@@ -286,8 +197,9 @@ const App = () => {
     geojsonArray.push(nmin2);
     geojsonArray.push(nmin1);
     geojsonArray.push(sieges);
-    geojsonArray.push(n0);
-    geojsonArray.push(n1);
+    console.log(sieges)
+    console.log(data.data)
+    geojsonArray.push(data.data);
 
     const geojson = {
       type: "FeatureCollection",
@@ -299,11 +211,9 @@ const App = () => {
     filtersByDatas(geojson);
 
     map.current.indoor.addMap(IndoorMap.fromGeojson(geojson));
-    //map.current.fire('indoor.map.loaded', map.current.indoor);
     map.current.addControl(new IndoorControl());
 
-    //return ScrollTrigger.refresh()
-  }, []);
+  }, [data]);
 
   useEffect(() => {
     if (!map.current) return;
@@ -320,14 +230,11 @@ const App = () => {
     if (map.current.indoor.getSelectedMap()) {
       map.current.indoor.setLevel(level);
     }
-    // map.current.fire('indoor.level.changed', { level });
-    // const indoorLayer = new IndoorLayer(map.current);
-    // indoorLayer.setLevel({...level});
   }, [currentChapter]);
 
   return (
     <div>
-      {/* <Drawer></Drawer> */}
+      <Drawer drawerIsOpen={drawerIsOpen} setDrawerIsOpen={setDrawerIsOpen} drawerContent={drawerContent}></Drawer>
       <div ref={mapContainer} className="map-container" />
       <div className="absolute left-2 top-2 w-48 bg-slate-100 p-4 z-50">
         {debug}
