@@ -86,6 +86,7 @@ class IndoorLayer {
 
   _addLayerForFiltering(layer: LayerSpecification, beforeLayerId?: string) {
     this._map.addLayer(layer, beforeLayerId);
+
     this._savedFilters.push({
       layerId: layer.id,
       filter: (this._map.getFilter(layer.id) as ExpressionSpecification) || [
@@ -209,11 +210,10 @@ class IndoorLayer {
     this._map.addSource(SOURCE_ID, {
       type: "geojson",
       data: geojson,
-      'generateId': true
+      //'generateId': true
     });
 
     // Add layers and save filters
-    console.log('ajout des layers', layers)
     layers.forEach((layer) => this._addLayerForFiltering(layer, beforeLayerId));
 
     // Hide layers which can overlap for rendering

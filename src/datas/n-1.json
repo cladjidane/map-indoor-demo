@@ -13,6 +13,7 @@
         "level": "-1",
         "fill-color": "#f6f6f6",
         "line-width": 0,
+        "isDisabled": true,
         "id": "ID_5952"
       },
       "geometry": {
@@ -1319,6 +1320,7 @@
         "name": "Vide",
         "desc": null,
         "level": "-1",
+        "isDisabled": true,
         "id": "ID_4103"
       },
       "geometry": {
@@ -1758,6 +1760,7 @@
         "desc": null,
         "level": "-1",
         "fill-color": "#f6f6f6",
+        "isDisabled": true,
         "line-width": 0,
         "id": "ID_6780"
       },
@@ -1830,6 +1833,7 @@
         "desc": null,
         "level": "-1",
         "fill-color": "#f6f6f6",
+        "isDisabled": true,
         "line-width": 0,
         "id": "ID_5915"
       },
@@ -1918,6 +1922,7 @@
         "desc": null,
         "level": "-1",
         "fill-color": "#f6f6f6",
+        "isDisabled": true,
         "line-width": 0,
         "id": "ID_8176"
       },
@@ -3276,6 +3281,7 @@
         "indoor": "room",
         "name": "Espace vide",
         "desc": null,
+        "isDisabled": true,
         "level": "-1",
         "fill-color": "#f6f6f6",
         "line-width": 0,

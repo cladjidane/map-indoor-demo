@@ -499,7 +499,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_7984"
@@ -526,7 +526,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_6073"
@@ -553,7 +553,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_5112"
@@ -580,7 +580,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_3816"
@@ -607,7 +607,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_3478"
@@ -634,7 +634,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_1965"
@@ -10216,7 +10216,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_6407"
@@ -10243,7 +10243,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_3592"
@@ -10486,7 +10486,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_25"
@@ -10729,7 +10729,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_1423"
@@ -10972,7 +10972,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_6287"
@@ -11119,7 +11119,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_7419"
@@ -11266,7 +11266,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_8361"
@@ -11509,7 +11509,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_1279"
@@ -11752,7 +11752,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_5268"
@@ -11995,7 +11995,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_3244"
@@ -12022,7 +12022,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_8061"
@@ -12265,7 +12265,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_9963"
@@ -12412,7 +12412,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_7652"
@@ -12559,7 +12559,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_6243"
@@ -12802,7 +12802,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_833"
@@ -12949,7 +12949,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_6338"
@@ -13096,7 +13096,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_4936"
@@ -13339,7 +13339,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_5815"
@@ -13582,7 +13582,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_1183"
@@ -13825,7 +13825,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_6644"
@@ -13852,7 +13852,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_4802"
@@ -18049,7 +18049,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_817"
@@ -18292,7 +18292,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_2539"
@@ -18439,7 +18439,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_1532"
@@ -18586,7 +18586,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_5209"
@@ -18733,7 +18733,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_5929"
@@ -18976,7 +18976,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_4904"
@@ -19123,7 +19123,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_1256"
@@ -19270,7 +19270,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_6578"
@@ -19417,7 +19417,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_3213"
@@ -19660,7 +19660,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_2643"
@@ -19903,7 +19903,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_5464"
@@ -20050,7 +20050,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_1450"
@@ -20197,7 +20197,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_2618"
@@ -20344,7 +20344,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_5104"
@@ -20587,7 +20587,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_620"
@@ -20734,7 +20734,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_6654"
@@ -20881,7 +20881,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_3804"
@@ -21028,7 +21028,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_2518"
@@ -21838,7 +21838,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_3599"
@@ -21865,7 +21865,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_3030"
@@ -21892,7 +21892,7 @@
       "properties": {
         "layer": "N0",
         "indoor": "seating",
-        "level": "0;1",
+        "level": "0",
         "name": null,
         "desc": null,
         "id": "ID_3091"

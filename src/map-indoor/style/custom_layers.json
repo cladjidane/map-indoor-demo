@@ -1,0 +1,27 @@
+[
+  {
+    "filter": ["has", "area-shadow-outside"],
+    "id": "areas-shadow-outside",
+    "source": "indoor",
+    "type": "line",
+    "layout": { "line-cap": "round", "line-join": "bevel" },
+    "paint": {
+      "line-color": "#000000",
+      "line-width": 20,
+      "line-blur": 20,
+      "line-opacity": 0.3
+    }
+  },
+  {
+    "filter": ["has", "area-shadow-inside"],
+    "id": "areas-shadow-inside",
+    "source": "indoor",
+    "type": "line",
+    "layout": { "line-cap": "round", "line-join": "miter" },
+    "paint": {
+      "line-offset": 2,
+      "line-width": 3,
+      "line-color": "hsla(0, 0%, 0%, 0.1)"
+    }
+  }
+]

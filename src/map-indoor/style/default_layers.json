@@ -1,18 +1,82 @@
 [
   {
+    "filter": ["has", "area-background-shadow-outside"],
+    "id": "areas-background-shadow-outside",
+    "source": "indoor",
+    "type": "line",
+    "layout": { "line-cap": "round", "line-join": "bevel" },
+    "paint": {
+      "line-color": "#000000",
+      "line-width": 10,
+      "line-blur": 20,
+      "line-opacity": 0.3
+    }
+  },
+  {
+    "filter": ["filter-==", "indoor", "area-background"],
+    "id": "buildings-area-background",
+    "type": "fill",
+    "source": "indoor",
+    "paint": {
+      "fill-antialias": false,
+      "fill-color": [
+        "case",
+        ["has", "fill-color"],
+        ["get", "fill-color"],
+        "#ededed"
+      ]
+    }
+  },
+  {
+    "filter": ["has", "area-background-shadow-inside"],
+    "id": "areas-background-shadow-inside",
+    "source": "indoor",
+    "type": "line",
+    "layout": { "line-cap": "round", "line-join": "miter" },
+    "paint": {
+      "line-offset": 2,
+      "line-width": 3,
+      "line-color": "hsla(0, 0%, 0%, 0.1)"
+    }
+  },
+  {
     "filter": ["any", ["has", "building"], ["has", "building:part"]],
-    "id": "buildings-background",
+    "id": "buildings-background-part",
     "type": "fill",
     "source": "indoor",
     "paint": {
       "fill-color": "#E6E4E0",
-      "fill-opacity": {
-        "base": 1,
-        "stops": [
-          [16.5, 0],
-          [18, 1]
-        ]
-      }
+      "fill-opacity": 1
+    }
+  },
+  {
+    "filter": ["filter-==", "indoor", "road"],
+    "id": "indoor-roads",
+    "type": "fill",
+    "source": "indoor",
+    "paint": {
+      "fill-antialias": false,
+      "fill-color": [
+        "case",
+        ["has", "fill-color"],
+        ["get", "fill-color"],
+        "#000"
+      ]
+    }
+  },
+  {
+    "filter": ["filter-==", "indoor", "building-background"],
+    "id": "buildings-background",
+    "type": "fill",
+    "source": "indoor",
+    "paint": {
+      "fill-antialias": false,
+      "fill-color": [
+        "case",
+        ["has", "fill-color"],
+        ["get", "fill-color"],
+        "#000"
+      ]
     }
   },
   {
@@ -85,22 +149,6 @@
     }
   },
   {
-    "filter": ["filter-==", "indoor", "corridor"],
-    "id": "indoor-corridors",
-    "type": "fill",
-    "source": "indoor",
-    "paint": {
-      "fill-color": "#D7CCC8",
-      "fill-opacity": {
-        "base": 1,
-        "stops": [
-          [17, 0],
-          [18, 1]
-        ]
-      }
-    }
-  },
-  {
     "filter": ["filter-==", "indoor", "area"],
     "id": "indoor-areas",
     "type": "fill",
@@ -116,27 +164,32 @@
     }
   },
   {
-    "filter": ["has", "shadow"],
-    "id": "indoor-areas-shadow",
+    "filter": ["filter-==", "indoor", "corridor"],
+    "id": "indoor-corridors",
+    "type": "fill",
     "source": "indoor",
-    "type": "line",
-    "line-join": "bevel",
-    "line-cap": "round",
     "paint": {
-      "line-color": [
-        "case",
-        ["has", "line-color"],
-        ["get", "line-color"],
-        "#000"
-      ],
-      "line-width": ["case", ["has", "line-width"], ["get", "line-width"], 20],
-      "line-blur": 20,
-      "line-opacity": 0.3
+      "fill-color": "white",
+      "fill-opacity": 1
     }
   },
   {
     "filter": ["any", ["filter-==", "indoor", "room"]],
     "id": "indoor-rooms",
+    "type": "fill",
+    "source": "indoor",
+    "paint": {
+      "fill-color": [
+        "case",
+        ["boolean", ["feature-state", "hover"], false],
+        "red",
+        ["case", ["has", "fill-color"], ["get", "fill-color"], "#e8e8e8"]
+      ]
+    }
+  },
+  {
+    "filter": ["any", ["filter-==", "indoor", "room-hover"]],
+    "id": "indoor-rooms-hover",
     "type": "fill",
     "source": "indoor",
     "paint": {
@@ -483,6 +536,22 @@
     }
   },
   {
+    "filter": ["filter-==", "indoor", "area-fantom"],
+    "id": "indoor-fantom-areas",
+    "type": "fill",
+    "source": "indoor",
+    "paint": {
+      "fill-antialias": false,
+      "fill-color": [
+        "case",
+        ["has", "fill-color"],
+        ["get", "fill-color"],
+        "#fff"
+      ],
+      "fill-opacity": 0.3
+    }
+  },
+  {
     "interactive": true,
     "minzoom": 17,
     "layout": {
@@ -507,7 +576,7 @@
       "text-letter-spacing": 0.02,
       "text-max-width": 8
     },
-    "filter": ["filter-==", "indoor", "room---"],
+    "filter": ["filter-==", "indoor", "room--"],
     "type": "symbol",
     "source": "indoor",
     "id": "poi-indoor-text-ref",
