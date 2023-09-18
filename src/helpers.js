@@ -2,34 +2,38 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+import nmin2 from "./datas/nmin2.json";
+import nmin1 from "./datas/nmin1.json";
 import n0 from "./datas/n0.json";
 import n1 from "./datas/n1.json";
-import nmin1 from "./datas/n-1.json";
-import nmin2 from "./datas/n-2.json";
-import sols from "./datas/sols.json";
-import rooms from "./datas/rooms.json";
+// import nmin1 from "./datas/n-1.json";
+// import nmin2 from "./datas/n-2.json";
+// import sols from "./datas/sols.json";
+// import rooms from "./datas/rooms.json";
 import gradins from "./datas/gradins.json";
 import sieges from "./datas/sieges.json";
 
 export const prepareGeojsonArray = (site) => {
   const geojsonArray = [];
 
-  geojsonArray.push(sols);
   geojsonArray.push(nmin2);
-  //geojsonArray.push(nmin1);
-  //geojsonArray.push(n1);
+  geojsonArray.push(nmin1);
   geojsonArray.push(n0);
-  geojsonArray.push(rooms.data);
+  geojsonArray.push(n1);
+  // //geojsonArray.push(nmin1);
+  // //geojsonArray.push(n1);
+  // geojsonArray.push(n0);
+  // geojsonArray.push(rooms.data);
   geojsonArray.push(gradins);
   geojsonArray.push(sieges);
 
-  const staticFeatures = site.allFeatures.map((feature) => ({
-    ...feature,
-    properties: {
-      ...feature.properties,
-      indoor: "room",
-    },
-  }));
+  // const staticFeatures = site.allFeatures.map((feature) => ({
+  //   ...feature,
+  //   properties: {
+  //     ...feature.properties,
+  //     indoor: "room",
+  //   },
+  // }));
 
 //   geojsonArray.push({
 //     type: "FeatureCollection",
@@ -50,7 +54,7 @@ export const prepareGeojsonArray = (site) => {
     }, []),
   };
 
-  console.log(geojson);
+  console.log('--',geojson);
   return geojson;
 };
 

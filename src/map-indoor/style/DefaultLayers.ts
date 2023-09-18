@@ -108,7 +108,7 @@ function createPoiLayers(metaLayer: LayerSpecification): Array<LayerSpecificatio
 
 const poiLayer = layers.find(layer => layer.id === POI_LAYER_ID);
 
-const layersConcat = layers.concat(customtLayers)
+//const layersConcat = layers.concat(customtLayers)
 if (poiLayer) {
     // Convert poi-indoor layer into several poi-layers
     // createPoiLayers(poiLayer).forEach(_layer => {
@@ -117,4 +117,4 @@ if (poiLayer) {
     // layers = layers.filter(layer => layer.id !== POI_LAYER_ID);
 }
 
-export default layersConcat;
+export default layers;

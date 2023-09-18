@@ -36,7 +36,8 @@
     "paint": {
       "line-offset": 2,
       "line-width": 3,
-      "line-color": "hsla(0, 0%, 0%, 0.1)"
+      "line-blur": 10,
+      "line-color": "hsla(0, 0%, 0%, 0.20)"
     }
   },
   {
@@ -149,6 +150,19 @@
     }
   },
   {
+    "filter": ["has", "area-shadow-outside"],
+    "id": "indoor-areas-shadow-outside",
+    "source": "indoor",
+    "type": "line",
+    "layout": { "line-cap": "round", "line-join": "bevel" },
+    "paint": {
+      "line-color": "#000000",
+      "line-width": 10,
+      "line-blur": 10,
+      "line-opacity": 0.1
+    }
+  },
+  {
     "filter": ["filter-==", "indoor", "area"],
     "id": "indoor-areas",
     "type": "fill",
@@ -164,12 +178,81 @@
     }
   },
   {
+    "filter": ["has", "area-shadow-inside"],
+    "id": "indoor-areas-shadow-inside",
+    "source": "indoor",
+    "type": "line",
+    "layout": { "line-cap": "round", "line-join": "miter" },
+    "paint": {
+      "line-offset": 2,
+      "line-blur": 10,
+      "line-width": 3,
+      "line-color": "hsla(0, 0%, 0%, 0.90)"
+    }
+  },
+  {
+    "filter": ["has", "mezzanine-shadow-outside"],
+    "id": "indoor-mezzanines-shadow-outside",
+    "source": "indoor",
+    "type": "line",
+    "layout": { "line-cap": "round", "line-join": "bevel" },
+    "paint": {
+      "line-color": "#000000",
+      "line-width": 20,
+      "line-blur": 20,
+      "line-opacity": 0.3
+    }
+  },
+  {
+    "filter": ["filter-==", "indoor", "mezzanine"],
+    "id": "indoor-mezzanines",
+    "type": "fill",
+    "source": "indoor",
+    "paint": {
+      "fill-antialias": false,
+      "fill-color": [
+        "case",
+        ["has", "fill-color"],
+        ["get", "fill-color"],
+        "#000"
+      ]
+    }
+  },
+  {
+    "filter": ["has", "mezzanine-shadow-inside"],
+    "id": "indoor-mezzanines-shadow-inside",
+    "source": "indoor",
+    "type": "line",
+    "layout": {
+      "line-cap": "round",
+      "line-join": "miter"
+    },
+    "paint": {
+      "line-offset": {
+        "base": 1,
+        "stops": [
+          [15, 1],
+          [16, 2],
+          [17, 3],
+          [18, 4]
+        ]
+      },
+      "line-width": 3,
+      "line-color": "hsla(0, 0%, 0%, 0.1)"
+    }
+  },
+  {
     "filter": ["filter-==", "indoor", "corridor"],
     "id": "indoor-corridors",
     "type": "fill",
     "source": "indoor",
     "paint": {
-      "fill-color": "white",
+      "fill-color": [
+        "case",
+        ["has", "fill-color"],
+        ["get", "fill-color"],
+        "white"
+      ],
       "fill-opacity": 1
     }
   },
@@ -202,7 +285,7 @@
     }
   },
   {
-    "filter": ["any", ["filter-==", "indoor", "room"]],
+    "filter": ["any", ["filter-==", "indoor", "room"], ["has", "border"]],
     "id": "indoor-rooms-borders",
     "type": "line",
     "source": "indoor",
@@ -211,13 +294,14 @@
         "case",
         ["has", "line-color"],
         ["get", "line-color"],
-        "white"
+        "black"
       ],
-      "line-width": ["case", ["has", "line-width"], ["get", "line-width"], 1],
+      "line-blur": 1,
+      "line-width": ["case", ["has", "line-width"], ["get", "line-width"], 0.2],
       "line-opacity": {
         "base": 1,
         "stops": [
-          [17, 0],
+          [15, 0],
           [18, 1]
         ]
       }
