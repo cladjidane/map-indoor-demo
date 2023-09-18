@@ -35,17 +35,19 @@ export const prepareGeojsonArray = (site) => {
   //   },
   // }));
 
-//   geojsonArray.push({
-//     type: "FeatureCollection",
-//     name: "site",
-//     features: staticFeatures,
-//   });
+  // geojsonArray.push({
+  //   type: "FeatureCollection",
+  //   name: "site",
+  //   features: staticFeatures,
+  // });
 
   geojsonArray.push({
     type: "FeatureCollection",
     name: "site",
     features: site.allFeatures,
   });
+
+  console.log(site)
 
   let geojson = {
     type: "FeatureCollection",
@@ -54,7 +56,6 @@ export const prepareGeojsonArray = (site) => {
     }, []),
   };
 
-  console.log('--',geojson);
   return geojson;
 };
 
@@ -64,7 +65,6 @@ export const initScrollTrigger = (
   elementsRefs,
   setCurrentStep
 ) => {
-  // Pour gérer le sticky de la carte
   const sectionMap = sectionMapRef.current;
   // Épinglez le premier enfant de #section-map
   ScrollTrigger.create({
@@ -79,23 +79,22 @@ export const initScrollTrigger = (
 
   // Pour gérer les changements de steps / chapters
   elementsRefs.current.forEach((elementRef, index) => {
-    gsap.to(elementRef, {
-      scrollTrigger: {
-        trigger: elementRef,
-        start: "top center", // Commence lorsque le haut de l'élément atteint le centre de la fenêtre
-        end: "bottom center", // Se termine lorsque le bas de l'élément atteint le centre de la fenêtre
-        toggleClass: "active", // Ajoute une classe "active" lorsque le déclencheur est actif
-        onToggle: ({ isActive }) => {
-          if (isActive) {
-            setCurrentStep(index);
-            // Désactive tous les autres éléments
-            elementsRefs.current.forEach((otherElementRef, otherIndex) => {
-              if (index !== otherIndex) {
-                gsap.set(otherElementRef, { clearProps: "all" });
-              }
-            });
-          }
-        },
+    ScrollTrigger.create({
+      trigger: elementRef,
+      start: "top center",
+      end: "bottom center",
+      markers: true,
+      toggleClass: "active",
+      onToggle: ({ isActive }) => {
+        if (isActive) {
+          setCurrentStep(index);
+          // Désactive tous les autres éléments
+          elementsRefs.current.forEach((otherElementRef, otherIndex) => {
+            if (index !== otherIndex) {
+              gsap.set(otherElementRef, { clearProps: "all" });
+            }
+          });
+        }
       },
     });
   });

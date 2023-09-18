@@ -1,4 +1,5 @@
 import "mapbox-gl/dist/mapbox-gl.css";
+import ReactDOMServer from "react-dom/server";
 
 import * as React from "react";
 import axios from "axios";
@@ -9,13 +10,12 @@ import { useEffect, useRef, useState } from "react";
 import { addIndoorTo, IndoorMap, IndoorControl } from "./map-indoor"; // dossier ts pas le compoenent
 import { useWindowSize } from "usehooks-ts";
 
-import Drawer from "./components/Drawer";
 import { filtersByDatas } from "./map-indoor/Utils";
 import site from "./datas/site.json";
 
 import mapboxgl from "mapbox-gl";
+import MapboxPopup from "./components/MapboxPopup";
 
-import chapters from "./chapters.json";
 import { prepareGeojsonArray, initScrollTrigger } from "./helpers";
 
 mapboxgl.accessToken =
@@ -24,17 +24,17 @@ mapboxgl.accessToken =
 const App = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
+  const popup = useRef(null);
+  const [featureId, setFeatureId] = useState(null)
 
   const { width, height } = useWindowSize();
   const mapContainer = useRef(null);
-  const [drawerIsOpen, setDrawerIsOpen] = useState(false);
   const elementsRefs = useRef([]); // enfant du parent
   const sectionMapRef = useRef(null); // parent
 
   const map = useRef(null);
   const [lng, setLng] = useState(-4.519889705059086);
   const [lat, setLat] = useState(48.38735432101723);
-  const [zoom, setZoom] = useState(18);
 
   const [geojson, setGeojson] = useState(null);
   const [featuresHovered, setFeaturesHovered] = useState(null);
@@ -43,19 +43,23 @@ const App = () => {
   const [debug, setDebug] = useState(0);
 
   useEffect(() => {
-    // const fetchData = async () => {
-    //   try {
-    //     const response = await axios.get('/wp-json/k/v1/maps/79');
-    //     const apiData = response.data;
-    //     setData(apiData);
-    //     setLoading(false);
-    //   } catch (error) {
-    //     console.error('Erreur lors de la récupération des données depuis l\'API', error);
-    //   }
-    // };
-    //fetchData();
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://brest-arena.51-83-37-25.plesk.page/wp-json/k/v1/maps/map/4618');
+        const apiData = response.data;
+        setData(apiData);
+        setLoading(false);
+      } catch (error) {
+        console.error('Erreur lors de la récupération des données depuis l\'API', error);
+      }
+    };
 
-    setData(site);
+    if (process.env.NODE_ENV === 'production') {
+      fetchData();
+    } else {
+      setData(site);
+      //fetchData();
+    }
   }, []);
 
   useEffect(() => {
@@ -74,7 +78,6 @@ const App = () => {
     if (!data || !map.current) return;
 
     data.allFeatures.forEach((feature) => {
-      console.log(map, feature);
       map.current.setFeatureState(
         {
           source: "indoor",
@@ -95,6 +98,22 @@ const App = () => {
         );
       });
     }
+
+    const feature = data.allFeatures.find(el => el.id === featuresHovered[0])
+    const coordinates = turf.centroid(feature).geometry.coordinates;
+    if (map.current.indoor.getSelectedMap()) {
+      map.current.indoor.setLevel(parseInt(feature.properties.level));
+    }
+    if (popup.current) popup.current.remove();
+
+    const popupContent = ReactDOMServer.renderToString(
+      <MapboxPopup properties={feature.properties} />
+    );
+
+    popup.current = new mapboxgl.Popup()
+      .setLngLat(coordinates)
+      .setHTML(popupContent)
+      .addTo(map.current)
   }, [data, featuresHovered]);
 
   useEffect(() => {
@@ -115,16 +134,26 @@ const App = () => {
     map.current.on("load", function () {
       let hoveredPolygonId = null;
 
-      map.current.on("click", "indoor-rooms", (e) => {
-        map.current.getCanvas().style.cursor = "pointer";
+      map.current.on("click", "indoor-rooms-hover", (e) => {
         const properties = e.features[0].properties;
-        console.log(properties);
+        const coordinates = turf.centroid(e.features[0]).geometry.coordinates;
+
+        if (popup.current) {
+          popup.current.remove();
+        }
+
+        const popupContent = ReactDOMServer.renderToString(
+          <MapboxPopup properties={properties} />
+        );
+
+        popup.current = new mapboxgl.Popup()
+          .setLngLat(coordinates)
+          .setHTML(popupContent)
+          .addTo(map.current);
       });
 
       map.current.on("mousemove", "indoor-rooms-hover", (e) => {
         map.current.getCanvas().style.cursor = "pointer";
-        const properties = e.features[0].properties;
-        const coordinates = turf.centroid(e.features[0]).geometry.coordinates;
 
         if (e.features.length > 0) {
           if (e.features[0].properties.isDisabled) return;
@@ -145,8 +174,6 @@ const App = () => {
             },
             { hover: true }
           );
-          if (!drawerIsOpen) setDrawerIsOpen(true);
-          setDrawerContent(properties);
         }
       });
 
@@ -165,12 +192,12 @@ const App = () => {
       });
     });
 
-    map.current.on("indoor.map.loaded", () => {
-      map.current.moveLayer("areas-shadow-outside", "indoor-areas");
-      console.log("---", map.current.getStyle().layers);
-    });
+    // map.current.on("indoor.map.loaded", () => {
+    //   map.current.moveLayer("areas-shadow-outside", "indoor-areas");
+    //   console.log("---", map.current.getStyle().layers);
+    // });
 
-    let geojson = prepareGeojsonArray(site);
+    let geojson = prepareGeojsonArray(data);
     addIndoorTo(map.current);
     setGeojson(geojson);
     filtersByDatas(geojson);
@@ -190,16 +217,19 @@ const App = () => {
   useEffect(() => {
     if (!map.current) return;
     if (!data.steps[currentStep]) return;
+    if (popup.current) {
+      popup.current.remove();
+    }
     const level = data.steps[currentStep].step_mapconfig.level;
     let easeTo = {
       center: data.steps[currentStep].step_mapconfig.center,
       zoom: data.steps[currentStep].step_mapconfig.zoom,
       duration: data.steps[currentStep].step_mapconfig.duration,
       padding: {
-        top: 10,
+        top: 25,
         bottom: 25,
-        left: (30 / 100) * Math.min(width, height),
-        right: 5,
+        left: 25, //(30 / 100) * Math.min(width, height),
+        right: 25,
       },
     };
     map.current.easeTo(easeTo);
@@ -217,19 +247,22 @@ const App = () => {
           ref={(element) => {
             elementsRefs.current[i] = element;
           }}
-          className={`shadow-xl h-screen relative z-30 pointer-events-none bg-slate-100 xs:w-full md:w-3/12 lg:w-3/12 flex flex-col justify-center p-16 pointer-events-auto`}
+          className={`shadow-xl h-screen relative z-30 pointer-events-none bg-white xs:w-full md:w-3/12 lg:w-3/12 flex flex-col justify-center p-16 pointer-events-auto`}
         >
+          <div className="opacity-20 uppercase text-[25px] mb-8 textstroke">Niveau {step.step_mapconfig.level}</div>
+
           <p className="uppercase text-gray-400 mb-4">{step.step_title_top}</p>
-          <h3 className="text-2xl mb-4">{step.step_title}</h3>
+          <h3 className="text-3xl mb-4 font-[900] text-orange">{step.step_title}</h3>
           {step.step_features.map((feature, index) => {
             return (
               <div
                 key={index}
                 className="font-base pl-4 cursor-pointer"
-                onMouseEnter={() => setFeaturesHovered(feature.features)}
-                onMouseLeave={() => setFeaturesHovered(null)}
+                //onMouseEnter={() => setFeaturesHovered(feature.features)}
+                onClick={() => setFeaturesHovered(feature.features)}
+                //onMouseLeave={() => setFeaturesHovered(null)}
               >
-                > {feature.features_title}
+                ⊕ {feature.features_title}
               </div>
             );
           })}
@@ -242,7 +275,7 @@ const App = () => {
     <div id="section-map" className="relative" ref={sectionMapRef}>
       <div
         ref={mapContainer}
-        className="map-container h-screen top-0 z-10 w-full"
+        className="map-container h-screen top-0 ml-3/12 right-0 z-10 xs:w-full md:w-9/12 lg:w-9/12"
       />
       {data && renderStep()}
       {/* <div className="absolute left-2 top-2 w-48 bg-slate-100 p-4 z-50">

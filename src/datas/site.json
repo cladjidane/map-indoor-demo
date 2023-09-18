@@ -6,15 +6,17 @@
       "step_title_top": "Brest Arena pour vos spectacles",
       "step_mapconfig": {
         "center": [-4.519889705059086, 48.38735432101723],
-        "level": "-1",
+        "level": -1,
         "duration": 2000,
         "zoom": 18.5
       },
       "step_features": [
         {
-          "features": [4507, 4511, 4508, 4510, 4529],
-          "features_title": "Loges"
+          "features": [4507, 4511, 4508, 4510],
+          "features_title": "Loges niveau -1"
         },
+        { "features": [4529], "features_title": "Loge rapide niveau -2" },
+        { "features": [4875], "features_title": "Zone de chargement" },
         { "features": [4525], "features_title": "Restauration" }
       ]
     },
@@ -23,7 +25,7 @@
       "step_title_top": "Brest Arena pour vos spectacles",
       "step_mapconfig": {
         "center": [-4.519889705059086, 48.38735432101723],
-        "level": "0",
+        "level": 0,
         "duration": 2000,
         "zoom": 19
       },
@@ -32,20 +34,29 @@
       ]
     },
     {
-      "step_title": "Les + Brest Arena",
+      "step_title": "Espaces partenaires",
       "step_title_top": "Brest Arena pour vos spectacles",
       "step_mapconfig": {
         "center": [-4.519889705059086, 48.38735432101723],
-        "level": 0,
+        "level": -2,
         "duration": 2000,
-        "zoom": 17
+        "zoom": 19
       },
       "step_features": [
-        {
-          "features": [4515, 4512, 4513],
-          "features_title": "\u00c0 Brest Arena"
-        },
-        { "features": [4528], "features_title": "\u00c0 Brest m\u00eame !" }
+        { "features": [4518, 4517], "features_title": "Salons privatifs" }
+      ]
+    },
+    {
+      "step_title": "Les + Brest Arena",
+      "step_title_top": "Brest Arena pour vos spectacles",
+      "step_mapconfig": {
+        "center": [-4.435515144603158, 48.39018868299382],
+        "level": 0,
+        "duration": 4000,
+        "zoom": 12
+      },
+      "step_features": [
+        { "features": [4884], "features_title": "Oc\u00e9anopolis" }
       ]
     }
   ],
@@ -57,7 +68,7 @@
         "name": "Loge 1",
         "level": "-1",
         "desc": "4 loges individuelles\r\n<ul>\r\n \t<li>2 loges de 18m<sup>2</sup> avec douches</li>\r\n \t<li>1 loge de 20m<sup>2</sup></li>\r\n \t<li>1 loge de 16m<sup>2</sup></li>\r\n</ul>\r\n1 loge collective de 45m<sup>2</sup>",
-        "indoor": "room-hover",
+        "indoor": "-hover",
         "id": 4507
       },
       "geometry": {
@@ -82,7 +93,7 @@
         "name": "Loge 2 et 3",
         "level": "-1",
         "desc": "4 loges individuelles\r\n<ul>\r\n \t<li>2 loges de 18m<sup>2</sup> avec douches</li>\r\n \t<li>1 loge de 20m<sup>2</sup></li>\r\n \t<li>1 loge de 16m<sup>2</sup></li>\r\n</ul>\r\n1 loge collective de 45m<sup>2</sup>",
-        "indoor": "room-hover",
+        "indoor": "-hover",
         "id": 4511
       },
       "geometry": {
@@ -108,7 +119,7 @@
         "name": "Loge 4",
         "level": "-1",
         "desc": "4 loges individuelles\r\n<ul>\r\n \t<li>2 loges de 18m<sup>2</sup> avec douches</li>\r\n \t<li>1 loge de 20m<sup>2</sup></li>\r\n \t<li>1 loge de 16m<sup>2</sup></li>\r\n</ul>\r\n1 loge collective de 45m<sup>2</sup>",
-        "indoor": "room-hover",
+        "indoor": "-hover",
         "id": 4508
       },
       "geometry": {
@@ -133,7 +144,7 @@
         "name": "Loge 5",
         "level": "-1",
         "desc": "4 loges individuelles\r\n<ul>\r\n \t<li>2 loges de 18m<sup>2</sup> avec douches</li>\r\n \t<li>1 loge de 20m<sup>2</sup></li>\r\n \t<li>1 loge de 16m<sup>2</sup></li>\r\n</ul>\r\n1 loge collective de 45m<sup>2</sup>",
-        "indoor": "room-hover",
+        "indoor": "-hover",
         "id": 4510
       },
       "geometry": {
@@ -158,7 +169,7 @@
         "name": "Loge rapide",
         "level": "-2",
         "desc": "Loge rapide",
-        "indoor": "room-hover",
+        "indoor": "-hover",
         "id": 4529
       },
       "geometry": {
@@ -178,13 +189,48 @@
       }
     },
     {
+      "id": 4875,
+      "type": "Feature",
+      "properties": {
+        "name": "Zone de chargement",
+        "level": "-2",
+        "desc": "<strong>Surface</strong> : 800m2\r\n<strong>Capacit\u00e9 de stationnement</strong> : 6 semi remorques",
+        "indoor": "room-hover",
+        "id": 4875
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [-4.520376653136189, 48.38723847980614],
+              [-4.520430095980625, 48.3872185393996],
+              [-4.520565484677054, 48.38710997977018],
+              [-4.520897671523425, 48.38725756291319],
+              [-4.520784858124525, 48.387427639394076],
+              [-4.520641785529573, 48.38734841359831],
+              [-4.520484766038753, 48.38726296390899],
+              [-4.520375609702039, 48.38729929656877],
+              [-4.520379203664703, 48.38729053624178],
+              [-4.520381667922026, 48.38728134736952],
+              [-4.520382872246172, 48.38727208672478],
+              [-4.520382979580509, 48.38726590250992],
+              [-4.520382103881081, 48.387256654642954],
+              [-4.520379992086538, 48.387247493881894],
+              [-4.520376653136189, 48.38723847980614]
+            ]
+          ]
+        ]
+      }
+    },
+    {
       "id": 4525,
       "type": "Feature",
       "properties": {
         "name": "Catering technique",
         "level": "-2",
         "desc": "<div>\r\n<div>Catering technique</div>\r\n</div>",
-        "indoor": "room-hover",
+        "indoor": "-hover",
         "id": 4525
       },
       "geometry": {
@@ -209,7 +255,7 @@
         "name": "Bar",
         "level": "-2",
         "desc": "<div>\r\n<div>Bar Niveau -2</div>\r\n</div>",
-        "indoor": "room-hover",
+        "indoor": "-hover",
         "id": 4522
       },
       "geometry": {
@@ -327,104 +373,73 @@
       }
     },
     {
-      "id": 4515,
+      "id": 4518,
       "type": "Feature",
       "properties": {
-        "name": "Salle de musculation",
+        "name": "Salon 1 et 2",
         "level": "-2",
-        "desc": "Salle de musculation BBH",
-        "indoor": "room-hover",
-        "id": 4515
+        "desc": "<div>\r\n<div>Salon 1 et 2</div>\r\n</div>",
+        "indoor": "-hover",
+        "id": 4518
       },
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
           [
             [
-              [-4.52037031420218, 48.38740192434641],
-              [-4.520493063450627, 48.387468724069],
-              [-4.520165577149469, 48.3877343310687],
-              [-4.520089758000258, 48.38771275868104],
-              [-4.520027804848071, 48.38767970628829],
-              [-4.52037031420218, 48.38740192434641]
+              [-4.51970028697369, 48.38722704965863],
+              [-4.519519019347046, 48.387373948951506],
+              [-4.519393595728936, 48.387305693717984],
+              [-4.519592726549647, 48.38714431785244],
+              [-4.519634918812494, 48.38716727886416],
+              [-4.519617055618422, 48.38718175523329],
+              [-4.51970028697369, 48.38722704965863]
             ]
           ]
         ]
       }
     },
     {
-      "id": 4512,
+      "id": 4517,
       "type": "Feature",
       "properties": {
-        "name": "Salle de r\u00e9union",
-        "level": "-1",
-        "desc": "Salle de r\u00e9union 15 places",
-        "indoor": "room-hover",
-        "id": 4512
-      },
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
-          [
-            [
-              [-4.520527768037518, 48.38744073740178],
-              [-4.520429798293021, 48.387520152193304],
-              [-4.520374929672622, 48.38749029291814],
-              [-4.520472914467294, 48.38741088627026],
-              [-4.520527768037518, 48.38744073740178]
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "id": 4513,
-      "type": "Feature",
-      "properties": {
-        "name": "Salle de production",
-        "level": "-1",
-        "desc": "Salle de production",
-        "indoor": "room-hover",
-        "id": 4513
-      },
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
-          [
-            [
-              [-4.520388771380955, 48.387455010368114],
-              [-4.520281280210146, 48.38754214940866],
-              [-4.520166314027555, 48.387479585296866],
-              [-4.52027382625996, 48.38739245761086],
-              [-4.520388771380955, 48.387455010368114]
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "id": 4528,
-      "type": "Feature",
-      "properties": {
-        "name": "Vestiaires salle annexe",
+        "name": "Salon 3",
         "level": "-2",
-        "desc": "<div>\r\n<div>Vestiaires</div>\r\n</div>",
-        "indoor": "room-hover",
-        "id": 4528
+        "desc": "Salon de reception 3",
+        "indoor": "-hover",
+        "id": 4517
       },
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
           [
             [
-              [-4.51991460301792, 48.387740736299335],
-              [-4.519836240583849, 48.38771895909706],
-              [-4.519873325683752, 48.38766482515036],
-              [-4.519972252407494, 48.3876940176141],
-              [-4.51991460301792, 48.387740736299335]
+              [-4.519960115251098, 48.38701648407131],
+              [-4.519779859383643, 48.38716256404007],
+              [-4.519697618877847, 48.3871178087776],
+              [-4.51968300353724, 48.38712965309143],
+              [-4.519639859304664, 48.387106174000714],
+              [-4.519834634424595, 48.386948197225465],
+              [-4.519960115251098, 48.38701648407131]
             ]
           ]
         ]
+      }
+    },
+    {
+      "id": 4884,
+      "type": "Feature",
+      "properties": {
+        "name": "Oc\u00e9anopolis",
+        "level": null,
+        "desc": "Site touristique payant le plus fr\u00e9quent\u00e9\u00a0de Bretagne avec plus de 10\u00a0millions de visiteurs depuis sa cr\u00e9ation, il offre \u00e0 son large public la possibilit\u00e9 de faire un tour du monde des oc\u00e9ans en une journ\u00e9e. Oc\u00e9anopolis, c\u2019est aussi la possibilit\u00e9 d\u2019organiser, dans un cadre enchanteur, des manifestations en tous genres.\u00a0 Plus de 80\u00a0\u00e9v\u00e9nements y sont accueillis chaque ann\u00e9e.",
+        "indoor": "point-hover",
+        "maki": "american-football",
+        "id": 4884
+      },
+      "geometry": {
+        "coordinates": [-4.435515144603158, 48.39018868299382],
+        "type": "Point"
       }
     }
   ]
