@@ -17,6 +17,7 @@ import mapboxgl from "mapbox-gl";
 import MapboxPopup from "./components/MapboxPopup";
 
 import { prepareGeojsonArray, initScrollTrigger } from "./helpers";
+import ArrowToGo from "./components/ArrowToGo";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiamVvZnVuIiwiYSI6ImNrd3huZXZjMzAwMWkycXFtb29zeDMxdnMifQ.N0SyKbZ6Br7bCL0IPmUZIg";
@@ -43,10 +44,16 @@ const App = () => {
   const [debug, setDebug] = useState(0);
 
   useEffect(() => {
+    const rootElement = document.getElementById("ba-map");
+    const classeString = Array.from(rootElement.classList).join(' ');
+    const match = classeString.match(/map-(\w+)/);
+    const mapid = match[1] || 5095;
+
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://brest-arena.51-83-37-25.plesk.page/wp-json/k/v1/maps/map/4618"
+          "https://brest-arena.51-83-37-25.plesk.page/wp-json/k/v1/maps/map/" +
+            mapid
         );
         const apiData = response.data;
         setData(apiData);
@@ -62,6 +69,7 @@ const App = () => {
     if (process.env.NODE_ENV === "production") {
       fetchData();
     } else {
+      console.log(site)
       setData(site);
       //fetchData();
     }
@@ -263,7 +271,7 @@ const App = () => {
           ref={(element) => {
             elementsRefs.current[i] = element;
           }}
-          className={`shadow-xl h-screen relative z-30 pointer-events-none bg-white xs:w-full md:w-3/12 lg:w-3/12 flex flex-col justify-center p-16 pointer-events-auto`}
+          className={`snap-start snap-always shadow-xl h-screen relative z-30 pointer-events-none bg-white xs:w-full md:w-3/12 lg:w-3/12 flex flex-col justify-center p-16 pointer-events-auto`}
         >
           <p className="uppercase text-gray-400 mb-4">{step.step_title_top}</p>
           <h3 className="text-3xl mb-4 font-[900] text-orange">
@@ -271,51 +279,54 @@ const App = () => {
           </h3>
           <div dangerouslySetInnerHTML={{ __html: step.step_text }} />
 
-          { data.steps.length < i && 
-            <div className="w-8 h-8 mt-8">
-              <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  data-name="Calque 2"
-                  viewBox="0 0 14.89 14.89"
-                >
-                  <g data-name="Calque 1">
-                    <circle
-                      cx={7.44}
-                      cy={7.44}
-                      r={7.44}
-                      style={{
-                        fill: "#e94f1b",
-                      }}
-                    />
-                    <path
-                      d="M8.15 7.96c-.15 0-.3.02-.45.02.02-.45.05-.9.08-1.35.06-.91.21-1.93-.17-2.78-.09-.2-.37-.24-.54-.14-.2.11-.23.35-.14.54.16.37.13.8.12 1.19-.01.47-.04.94-.07 1.41l-.06 1.07c-.17-.04-.34-.09-.48-.18-.2-.12-.38-.04-.49.1-.16.1-.26.31-.14.52l1.53 2.67c.2.35.72.18.74-.2.04-.81.2-1.6.46-2.38.08-.23-.13-.52-.38-.5Z"
-                      style={{
-                        fill: "white",
-                      }}
-                    />
-                  </g>
-                </svg>
-            </div>
-          }
+          {data.steps.length > i + 1 ? (
+            <a href={`#sectionstep-${i + 1}`}>
+              <ArrowToGo orientation="bottom" />
+            </a>
+          ) : (
+            <a href={`#sectionstep-0`} className="text-xs flex flex-col items-start justify-start w-auto ml-0">
+              <ArrowToGo orientation="top" />
+              retour
+            </a>
+          )}
         </div>
       );
     });
   };
   if (!data) return;
   return (
-    <div id="section-map" className="relative" ref={sectionMapRef}>
+    <div
+      id="section-map"
+      className="overflow-scroll snap-mandatory snap-y  scroll-smooth relative"
+      ref={sectionMapRef}
+    >
       <div
         ref={mapContainer}
         className="map-container h-screen top-0 ml-3/12 right-0 z-10 xs:w-full md:w-9/12 lg:w-9/12"
       >
         {data && (
           <div className="z-50 absolute left-12 bottom-12 drop-shadow-xl">
-            <p className="drop-shadow-xl uppercase text-[30px] mb-2 text-orange font-[900]">
+            <div className="flex gap-2 items-center mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                id="_\xCE\xD3\xC8_1"
+                data-name="\u2014\xCE\xD3\xC8_1"
+                viewBox="0 0 421.34 595.62"
+                className="w-4"
+              >
+                <defs>
+                  <style>{".cls-1{stroke-width:0}"}</style>
+                </defs>
+                <path
+                  d="m418.67 380.38-297.2-279.47c-5.39-5.07-14.23-1.27-14.26 6.13l-1.81 407.97c-.03 6.94 7.86 10.97 13.46 6.87l89.08-65.19 57.53 133.81c1.85 4.29 6.82 6.28 11.12 4.43l82.46-35.45c4.29-1.85 6.28-6.82 4.43-11.12l-57.53-133.81 108.44-19.67c6.84-1.24 9.35-9.73 4.29-14.49Zm-121.73 9.79-27.12 5.15 63.37 147.4-50.97 21.92-63.43-147.52-86.95 63.3 1.96-331.21 241.72 226.44-78.58 14.53ZM76.51.79l-.18.07c-6.3 2.38-9.49 9.44-7.11 15.74l12.85 34.02c2.38 6.3 9.44 9.49 15.74 7.11l.18-.07c6.3-2.38 9.49-9.44 7.11-15.74L92.25 7.9C89.87 1.6 82.81-1.59 76.51.79ZM228.75 83.45l-34.09 12.88c-6.3 2.38-9.49 9.44-7.11 15.74l.07.18c2.38 6.3 9.44 9.49 15.74 7.11l34.09-12.88c6.3-2.38 9.49-9.44 7.11-15.74l-.07-.18c-2.38-6.3-9.44-9.49-15.74-7.11ZM186.62 21.17c1.34-2.97 1.45-6.29.3-9.34a12.093 12.093 0 0 0-6.4-6.81l-.18-.08a12.106 12.106 0 0 0-9.34-.29 12.093 12.093 0 0 0-6.81 6.4L147.55 47.9a12.106 12.106 0 0 0-.29 9.34c1.15 3.05 3.42 5.47 6.4 6.81l.18.08c2.97 1.34 6.29 1.45 9.34.29 3.05-1.15 5.47-3.42 6.81-6.4l16.64-36.85ZM50.86 150.65l-34.59 13.06c-6.3 2.38-9.49 9.44-7.11 15.74l.07.18c2.38 6.3 9.44 9.49 15.74 7.11l34.59-13.06c6.3-2.38 9.49-9.44 7.11-15.74l-.07-.18c-2.38-6.3-9.44-9.49-15.74-7.11ZM17.32 66.51a12.106 12.106 0 0 0-9.34-.29 12.093 12.093 0 0 0-6.81 6.4l-.08.18a12.15 12.15 0 0 0-.29 9.34c1.15 3.05 3.42 5.47 6.39 6.81l36.86 16.65c2.97 1.34 6.29 1.45 9.34.29 3.05-1.15 5.47-3.42 6.81-6.4l.08-.17a12.15 12.15 0 0 0 .29-9.34 12.158 12.158 0 0 0-6.39-6.82L17.32 66.51Z"
+                  className="cls-1"
+                />
+              </svg>
+              Exporez la carte
+            </div>
+            <p className="drop-shadow uppercase text-[30px] mb-2 text-orange font-[900]">
               Niveau {data.steps[currentStep].step_mapconfig.level}
             </p>
-            <div className="flex gap-2 items-center">
-              <div className="bg-orange opacity-50 w-3 h-3 border border-solid border-black"></div>Exporez la carte
-            </div>
           </div>
         )}
       </div>

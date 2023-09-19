@@ -57,6 +57,7 @@ class GeoJsonHelper {
         const bounds = bbox(geojson);
 
         const parseFeature = (feature: Feature): void => {
+            console.log(feature.properties)
             const level = this.extractLevelFromFeature(feature);
             if (level === null) {
                 return;
