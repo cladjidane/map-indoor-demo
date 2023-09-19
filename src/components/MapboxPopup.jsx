@@ -1,7 +1,6 @@
 import React from "react";
 
 const MapboxPopup = ({ properties }) => {
-  console.log(properties.desc)
   return (
     <div className="p-8 bg-gray-100 rounded-lg">
       <h3 className="text-[14px] font-bold text-orange">{properties.name}</h3>

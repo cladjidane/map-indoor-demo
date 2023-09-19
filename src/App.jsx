@@ -15,9 +15,9 @@ import site from "./datas/site.json";
 
 import mapboxgl from "mapbox-gl";
 import MapboxPopup from "./components/MapboxPopup";
+import DirectionsCalculator from "./components/DirectionsCalculator";
 
-import { prepareGeojsonArray, initScrollTrigger } from "./helpers";
-import ArrowToGo from "./components/ArrowToGo";
+import { prepareGeojsonArray } from "./helpers";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiamVvZnVuIiwiYSI6ImNrd3huZXZjMzAwMWkycXFtb29zeDMxdnMifQ.N0SyKbZ6Br7bCL0IPmUZIg";
@@ -26,7 +26,7 @@ const App = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const popup = useRef(null);
-  const [featureId, setFeatureId] = useState(null);
+  const [level, setLevel] = useState(1);
 
   const { width, height } = useWindowSize();
   const mapContainer = useRef(null);
@@ -69,7 +69,6 @@ const App = () => {
     if (process.env.NODE_ENV === "production") {
       fetchData();
     } else {
-      console.log(site)
       setData(site);
       //fetchData();
     }
@@ -87,47 +86,47 @@ const App = () => {
     map.current.setCenter(newCenter);
   }, [width]);
 
-  useEffect(() => {
-    if (!data || !map.current) return;
+  // useEffect(() => {
+  //   if (!data || !map.current) return;
 
-    data.allFeatures.forEach((feature) => {
-      map.current.setFeatureState(
-        {
-          source: "indoor",
-          id: feature.id,
-        },
-        { hover: false }
-      );
-    });
+  //   data.allFeatures.forEach((feature) => {
+  //     map.current.setFeatureState(
+  //       {
+  //         source: "indoor",
+  //         id: feature.id,
+  //       },
+  //       { hover: false }
+  //     );
+  //   });
 
-    if (featuresHovered) {
-      featuresHovered.forEach((featureId) => {
-        map.current.setFeatureState(
-          {
-            source: "indoor",
-            id: featureId,
-          },
-          { hover: true }
-        );
-      });
-    }
+  //   if (featuresHovered) {
+  //     featuresHovered.forEach((featureId) => {
+  //       map.current.setFeatureState(
+  //         {
+  //           source: "indoor",
+  //           id: featureId,
+  //         },
+  //         { hover: true }
+  //       );
+  //     });
+  //   }
 
-    const feature = data.allFeatures.find((el) => el.id === featuresHovered[0]);
-    const coordinates = turf.centroid(feature).geometry.coordinates;
-    if (map.current.indoor.getSelectedMap()) {
-      map.current.indoor.setLevel(parseInt(feature.properties.level));
-    }
-    if (popup.current) popup.current.remove();
+  //   const feature = data.allFeatures.find((el) => el.id === featuresHovered[0]);
+  //   const coordinates = turf.centroid(feature).geometry.coordinates;
+  //   if (map.current.indoor.getSelectedMap()) {
+  //     map.current.indoor.setLevel(parseInt(feature.properties.level));
+  //   }
+  //   if (popup.current) popup.current.remove();
 
-    const popupContent = ReactDOMServer.renderToString(
-      <MapboxPopup properties={feature.properties} />
-    );
+  //   const popupContent = ReactDOMServer.renderToString(
+  //     <MapboxPopup properties={feature.properties} />
+  //   );
 
-    popup.current = new mapboxgl.Popup()
-      .setLngLat(coordinates)
-      .setHTML(popupContent)
-      .addTo(map.current);
-  }, [data, featuresHovered]);
+  //   popup.current = new mapboxgl.Popup()
+  //     .setLngLat(coordinates)
+  //     .setHTML(popupContent)
+  //     .addTo(map.current);
+  // }, [data, featuresHovered]);
 
   useEffect(() => {
     if (data === null) return;
@@ -202,21 +201,18 @@ const App = () => {
         }
         hoveredPolygonId = null;
       });
-
-      map.current.on("click", function (e) {
-        const zoomLevel = map.current.getZoom();
-        const coordinates = e.lngLat.toArray();
-
-        setDebug(
-          `${JSON.stringify(zoomLevel)} -- ${JSON.stringify(coordinates)}`
-        );
-      });
     });
 
     map.current.on("indoor.map.loaded", () => {
       if (map.current.indoor.getSelectedMap()) {
         const level = data.steps[0].step_mapconfig.level;
         map.current.indoor.setLevel(level);
+      }
+    });
+
+    map.current.on('indoor.level.changed', () => {
+      if (map.current.indoor.getSelectedMap()) {
+        setLevel(map.current.indoor.getLevel())
       }
     });
 
@@ -228,76 +224,13 @@ const App = () => {
     map.current.indoor.addMap(IndoorMap.fromGeojson(geojson));
     map.current.addControl(new IndoorControl(), "bottom-right");
 
-    // ScrollTrigger
-    initScrollTrigger(
-      mapContainer,
-      sectionMapRef,
-      elementsRefs,
-      setCurrentStep
-    );
   }, [data]);
 
-  useEffect(() => {
-    if (!map.current) return;
-    if (!data.steps[currentStep]) return;
-    if (popup.current) {
-      popup.current.remove();
-    }
-    const level = data.steps[currentStep].step_mapconfig.level;
-    let easeTo = {
-      center: data.steps[currentStep].step_mapconfig.center,
-      zoom: data.steps[currentStep].step_mapconfig.zoom,
-      duration: data.steps[currentStep].step_mapconfig.duration,
-      padding: {
-        top: 25,
-        bottom: 25,
-        left: 25, //(30 / 100) * Math.min(width, height),
-        right: 25,
-      },
-    };
-    map.current.easeTo(easeTo);
-
-    if (map.current.indoor.getSelectedMap()) {
-      map.current.indoor.setLevel(level);
-    }
-  }, [currentStep]);
-
-  const renderStep = () => {
-    return data.steps.map((step, i) => {
-      return (
-        <div
-          key={`sectionstep-${i}`}
-          id={`sectionstep-${i}`}
-          ref={(element) => {
-            elementsRefs.current[i] = element;
-          }}
-          className={`snap-start snap-always shadow-xl h-screen relative z-30 pointer-events-none bg-white xs:w-full md:w-3/12 lg:w-3/12 flex flex-col justify-center p-16 pointer-events-auto`}
-        >
-          <p className="uppercase text-gray-400 mb-4">{step.step_title_top}</p>
-          <h3 className="text-3xl mb-4 font-[900] text-orange">
-            {step.step_title}
-          </h3>
-          <div dangerouslySetInnerHTML={{ __html: step.step_text }} />
-
-          {data.steps.length > i + 1 ? (
-            <a href={`#sectionstep-${i + 1}`}>
-              <ArrowToGo orientation="bottom" />
-            </a>
-          ) : (
-            <a href={`#sectionstep-0`} className="text-xs flex flex-col items-start justify-start w-auto ml-0">
-              <ArrowToGo orientation="top" />
-              retour
-            </a>
-          )}
-        </div>
-      );
-    });
-  };
   if (!data) return;
   return (
     <div
       id="section-map"
-      className="overflow-scroll snap-mandatory snap-y  scroll-smooth relative"
+      className="h-screen relative"
       ref={sectionMapRef}
     >
       <div
@@ -325,15 +258,15 @@ const App = () => {
               Exporez la carte
             </div>
             <p className="drop-shadow uppercase text-[30px] mb-2 text-orange font-[900]">
-              Niveau {data.steps[currentStep].step_mapconfig.level}
+              Niveau {level}
             </p>
           </div>
         )}
       </div>
-      {data && renderStep()}
-      {/* <div className="absolute left-2 top-2 w-48 bg-slate-100 p-4 z-50">
-        {debug}
-      </div> */}
+      <div className="h-screen w-3/12 flex flex-col p-8 justify-center">
+          <h3>Venir à Brest Arena</h3>
+          { map.current && <DirectionsCalculator map={map.current} />}
+      </div>
     </div>
   );
 };
