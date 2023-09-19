@@ -265,7 +265,7 @@
       "fill-color": [
         "case",
         ["boolean", ["feature-state", "hover"], false],
-        "red",
+        "#e8e8e8",
         ["case", ["has", "fill-color"], ["get", "fill-color"], "#e8e8e8"]
       ]
     }
@@ -279,8 +279,8 @@
       "fill-color": [
         "case",
         ["boolean", ["feature-state", "hover"], false],
-        "#e74e0e",
-        ["case", ["has", "fill-color"], ["get", "fill-color"], "#4f4f4f"]
+        "rgba(0, 0, 0, 0.16)",
+        ["case", ["has", "fill-color"], ["get", "fill-color"], "rgba(233, 79, 28, 0.22)"]
       ]
     }
   },

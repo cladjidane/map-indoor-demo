@@ -158,7 +158,8 @@
         "layer": "N-2",
         "indoor": "area",
         "name": "Terrain",
-        "fill-color": "#e3b980",
+        "fill-color": "white",
+        "area-shadow-inside": true,
         "desc": null,
         "level": "-2;1",
         "id": "ID_32402"
@@ -295,9 +296,10 @@
     {
       "properties": {
         "name": "Terrain salle annexe",
-        "level": "-2;1",
+        "level": "-2;-1",
         "desc": "Terrain salle annexe",
-        "fill-color": "#e3b980",
+        "fill-color": "white",
+        "area-shadow-inside": true,
         "indoor": "area"
       },
       "geometry": {

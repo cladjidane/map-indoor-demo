@@ -74,7 +74,7 @@ export const initScrollTrigger = (
     end: "bottom 100%",
     pin: mapContainer.current,
     pinSpacing: false,
-    markers: true,
+    //markers: true,
   });
 
   // Pour gérer les changements de steps / chapters
@@ -83,7 +83,7 @@ export const initScrollTrigger = (
       trigger: elementRef,
       start: "top center",
       end: "bottom center",
-      markers: true,
+      //markers: true,
       toggleClass: "active",
       onToggle: ({ isActive }) => {
         if (isActive) {
