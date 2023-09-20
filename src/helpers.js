@@ -59,43 +59,37 @@ export const prepareGeojsonArray = (site) => {
   return geojson;
 };
 
-export const initScrollTrigger = (
-  mapContainer,
-  sectionMapRef,
-  elementsRefs,
-  setCurrentStep
-) => {
-  const sectionMap = sectionMapRef.current;
-  // Épinglez le premier enfant de #section-map
-  ScrollTrigger.create({
-    trigger: sectionMap,
-    start: "top top",
-    //end: () => `+=${sectionMap.offsetHeight - window.innerHeight}`,
-    end: "bottom 100%",
-    pin: mapContainer.current,
-    pinSpacing: false,
-    //markers: true,
-  });
+export function calculateDistance(coord1, coord2) {
+  const earthRadiusKm = 6371; // Rayon de la Terre en kilomètres
 
-  // Pour gérer les changements de steps / chapters
-  elementsRefs.current.forEach((elementRef, index) => {
-    ScrollTrigger.create({
-      trigger: elementRef,
-      start: "top center",
-      end: "bottom center",
-      //markers: true,
-      toggleClass: "active",
-      onToggle: ({ isActive }) => {
-        if (isActive) {
-          setCurrentStep(index);
-          // Désactive tous les autres éléments
-          elementsRefs.current.forEach((otherElementRef, otherIndex) => {
-            if (index !== otherIndex) {
-              gsap.set(otherElementRef, { clearProps: "all" });
-            }
-          });
-        }
-      },
-    });
-  });
-};
+  const lat1 = coord1[1];
+  const lon1 = coord1[0];
+  const lat2 = coord2[1];
+  const lon2 = coord2[0];
+
+  // Convertir les latitudes et longitudes de degrés en radians
+  const lat1Rad = degToRad(lat1);
+  const lon1Rad = degToRad(lon1);
+  const lat2Rad = degToRad(lat2);
+  const lon2Rad = degToRad(lon2);
+
+  // Différences de latitude et de longitude
+  const dLat = lat2Rad - lat1Rad;
+  const dLon = lon2Rad - lon1Rad;
+
+  // Formule de Haversine pour calculer la distance
+  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(lat1Rad) * Math.cos(lat2Rad) *
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+  // Distance en kilomètres
+  const distance = earthRadiusKm * c;
+
+  return distance;
+}
+
+function degToRad(degrees) {
+  return degrees * (Math.PI / 180);
+}
+

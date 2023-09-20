@@ -45,7 +45,7 @@ const App = () => {
 
   useEffect(() => {
     const rootElement = document.getElementById("ba-map");
-    const classeString = Array.from(rootElement.classList).join(' ');
+    const classeString = Array.from(rootElement.classList).join(" ");
     const match = classeString.match(/map-(\w+)/);
     const mapid = match[1] || 5095;
 
@@ -136,6 +136,7 @@ const App = () => {
       style: "mapbox://styles/jeofun/clm7b04lj00yi01que65k0llt",
       center: data.steps[0].step_mapconfig.center, //[0.001196129190514, -0.006008249764901], // [lng, lat], //
       zoom: data.steps[0].step_mapconfig.zoom,
+      dragPan: false,
     });
 
     const nav = new mapboxgl.NavigationControl();
@@ -210,9 +211,9 @@ const App = () => {
       }
     });
 
-    map.current.on('indoor.level.changed', () => {
+    map.current.on("indoor.level.changed", () => {
       if (map.current.indoor.getSelectedMap()) {
-        setLevel(map.current.indoor.getLevel())
+        setLevel(map.current.indoor.getLevel());
       }
     });
 
@@ -223,22 +224,22 @@ const App = () => {
 
     map.current.indoor.addMap(IndoorMap.fromGeojson(geojson));
     map.current.addControl(new IndoorControl(), "bottom-right");
-
   }, [data]);
 
   if (!data) return;
   return (
-    <div
-      id="section-map"
-      className="h-screen relative"
-      ref={sectionMapRef}
-    >
+    <div id="section-map" className="h-full relative" ref={sectionMapRef}>
+      <div className="relative z-50 md:h-full xs:w-full md:w-3/12 flex flex-col xs:p-8 xs:pl-8 md:pl-16 justify-center bg-white mapmask">
+        <p className="uppercase text-gray-400 mb-2">PRÉPAREZ</p>
+        <h3 className="text-3xl mb-4 font-[900] text-orange">VOTRE VENUE</h3>
+        {map.current && <DirectionsCalculator map={map.current} />}
+      </div>
       <div
         ref={mapContainer}
-        className="map-container h-screen top-0 ml-3/12 right-0 z-10 xs:w-full md:w-9/12 lg:w-9/12"
+        className="map-container xs:relative md:absolute min-h-[600px] h-full top-0 right-0 z-10 xs:w-full md:w-9/12"
       >
         {data && (
-          <div className="z-50 absolute left-12 bottom-12 drop-shadow-xl">
+          <div className="z-50 absolute right-12 top-12 drop-shadow-xl">
             <div className="flex gap-2 items-center mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -262,10 +263,6 @@ const App = () => {
             </p>
           </div>
         )}
-      </div>
-      <div className="h-screen w-3/12 flex flex-col p-8 justify-center">
-          <h3>Venir à Brest Arena</h3>
-          { map.current && <DirectionsCalculator map={map.current} />}
       </div>
     </div>
   );

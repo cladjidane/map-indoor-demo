@@ -13,10 +13,10 @@ export default defineConfig({
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
             extType = 'img';
           }
-          return `assets/[name][extname]`;
+          return `assets/home[extname]`;
         },
-        chunkFileNames: 'assets/[name].js',
-        entryFileNames: 'assets/[name].js',
+        chunkFileNames: 'assets/home.js',
+        entryFileNames: 'assets/home.js',
       },
     },
   },
