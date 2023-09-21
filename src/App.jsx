@@ -52,7 +52,7 @@ const App = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://brest-arena.51-83-37-25.plesk.page/wp-json/k/v1/maps/map/" +
+          "https://brestarena.fr/wp-json/k/v1/maps/map/" +
             mapid
         );
         const apiData = response.data;
