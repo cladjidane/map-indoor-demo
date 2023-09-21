@@ -45,7 +45,7 @@ const App = () => {
 
   useEffect(() => {
     const rootElement = document.getElementById("ba-map");
-    const classeString = Array.from(rootElement.classList).join(' ');
+    const classeString = Array.from(rootElement.classList).join(" ");
     const match = classeString.match(/map-(\w+)/);
     const mapid = match[1] || 5095;
 
@@ -69,7 +69,7 @@ const App = () => {
     if (process.env.NODE_ENV === "production") {
       fetchData();
     } else {
-      console.log(site)
+      console.log(site);
       setData(site);
       //fetchData();
     }
@@ -136,8 +136,27 @@ const App = () => {
       container: mapContainer.current,
       style: "mapbox://styles/jeofun/clm7b04lj00yi01que65k0llt",
       center: data.steps[0].step_mapconfig.center, //[0.001196129190514, -0.006008249764901], // [lng, lat], //
-      zoom: data.steps[0].step_mapconfig.zoom,
+      zoom:
+        width < 700
+          ? data.steps[0].step_mapconfig.zoom - 1
+          : data.steps[0].step_mapconfig.zoom,
     });
+
+    let easeTo = {
+      center: data.steps[0].step_mapconfig.center,
+      zoom:
+        width < 700
+          ? data.steps[0].step_mapconfig.zoom - 1
+          : data.steps[0].step_mapconfig.zoom,
+      duration: data.steps[0].step_mapconfig.duration,
+      padding: {
+        top: 25,
+        bottom: width < 700 ? width / 2 : 25,
+        left: 25, //(30 / 100) * Math.min(width, height),
+        right: 25,
+      },
+    };
+    map.current.easeTo(easeTo);
 
     const nav = new mapboxgl.NavigationControl();
     map.current.addControl(nav, "bottom-right");
@@ -246,11 +265,14 @@ const App = () => {
     const level = data.steps[currentStep].step_mapconfig.level;
     let easeTo = {
       center: data.steps[currentStep].step_mapconfig.center,
-      zoom: data.steps[currentStep].step_mapconfig.zoom,
+      zoom:
+        width < 700
+          ? data.steps[currentStep].step_mapconfig.zoom - 1
+          : data.steps[currentStep].step_mapconfig.zoom,
       duration: data.steps[currentStep].step_mapconfig.duration,
       padding: {
         top: 25,
-        bottom: 25,
+        bottom: width < 700 ? width / 2 : 25,
         left: 25, //(30 / 100) * Math.min(width, height),
         right: 25,
       },
@@ -271,24 +293,37 @@ const App = () => {
           ref={(element) => {
             elementsRefs.current[i] = element;
           }}
-          className={`snap-start snap-always shadow-xl h-screen relative z-30 pointer-events-none bg-white xs:w-full md:w-3/12 lg:w-3/12 flex flex-col justify-center p-16 pointer-events-auto`}
+          className={`snap-start snap-always shadow-xl h-screen relative z-30 xs:w-full md:w-3/12 lg:w-3/12 flex flex-col xs:justify-end md:justify-center pointer-events-auto`}
         >
-          <p className="uppercase text-gray-400 mb-4">{step.step_title_top}</p>
-          <h3 className="text-3xl mb-4 font-[900] text-orange">
-            {step.step_title}
-          </h3>
-          <div dangerouslySetInnerHTML={{ __html: step.step_text }} />
-
-          {data.steps.length > i + 1 ? (
-            <a href={`#sectionstep-${i + 1}`}>
-              <ArrowToGo orientation="bottom" />
-            </a>
-          ) : (
-            <a href={`#sectionstep-0`} className="text-xs flex flex-col items-start justify-start w-auto ml-0">
-              <ArrowToGo orientation="top" />
-              retour
-            </a>
-          )}
+          <div className=" bg-white xs:h-auto xs:max-h-[50vh] xs:overflow-y md:h-screen xs:p-8 md:p-16 overflow-y-auto">
+            <p className="uppercase text-gray-400 mb-4">
+              {step.step_title_top}
+            </p>
+            <h3 className="xs:text[20px] md:text-3xl mb-4 font-[900] text-orange">
+              {step.step_title}
+            </h3>
+            <div
+              className="xs:text-sm md:text-base"
+              dangerouslySetInnerHTML={{ __html: step.step_text }}
+            />
+            {width > 700 && (
+              <>
+                {data.steps.length > i + 1 ? (
+                  <a href={`#sectionstep-${i + 1}`}>
+                    <ArrowToGo orientation="bottom" />
+                  </a>
+                ) : (
+                  <a
+                    href={`#sectionstep-0`}
+                    className="text-xs flex flex-col items-start justify-start w-auto ml-0"
+                  >
+                    <ArrowToGo orientation="top" />
+                    retour
+                  </a>
+                )}
+              </>
+            )}
+          </div>
         </div>
       );
     });
@@ -302,7 +337,7 @@ const App = () => {
     >
       <div
         ref={mapContainer}
-        className="map-container h-screen top-0 ml-3/12 right-0 z-10 xs:w-full md:w-9/12 lg:w-9/12"
+        className="map-container md:l-1/4 h-screen top-0 md:ml-3/12 right-0 z-10 xs:w-full md:w-9/12 lg:w-9/12"
       >
         {data && (
           <div className="z-50 absolute left-12 bottom-12 drop-shadow-xl">
