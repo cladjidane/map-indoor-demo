@@ -236,7 +236,6 @@
         "indoor": "corridor",
         "name": "Couloir N -1",
         "fill-color": "white",
-        "border": true,
         "desc": null,
         "level": "-1"
       },

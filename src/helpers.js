@@ -1,5 +1,7 @@
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import * as turf from "@turf/turf";
+
 gsap.registerPlugin(ScrollTrigger);
 
 import nmin2 from "./datas/nmin2.json";
@@ -12,6 +14,32 @@ import n1 from "./datas/n1.json";
 // import rooms from "./datas/rooms.json";
 import gradins from "./datas/gradins.json";
 import sieges from "./datas/sieges.json";
+
+export const bufferRooms = (geojsonObject) => {
+  // Supposons que geojsonObject contient votre objet GeoJSON
+  //const modifiedGeoJSON = {...geojsonObject}; // Clonez l'objet GeoJSON pour ne pas le modifier directement
+
+  // Spécifiez la valeur en mètres par laquelle vous souhaitez contracter le polygone
+  const contractionDistance = 0.5; // Par exemple, 3 centimètres
+
+  // Parcourez chaque entité
+  // geojsonObject.features.forEach((feature) => {
+  //   if (feature.properties && feature.properties.indoor === "room") {
+  //     // Parcourez les coordonnées du polygone
+  //     feature.geometry.coordinates.forEach((polygon) => {
+  //       polygon.forEach((ring) => {
+  //         for (let i = 0; i < ring.length; i++) {
+  //           const [x, y] = ring[i];
+  //           // Appliquez la contraction (par exemple, réduisez x et y de la valeur spécifiée)
+  //           ring[i] = [x - contractionDistance, y - contractionDistance];
+  //         }
+  //       });
+  //     });
+  //   }
+  // });
+
+  return geojsonObject;
+};
 
 export const prepareGeojsonArray = (site) => {
   const geojsonArray = [];
@@ -47,8 +75,6 @@ export const prepareGeojsonArray = (site) => {
     features: site.allFeatures,
   });
 
-  console.log(site)
-
   let geojson = {
     type: "FeatureCollection",
     features: geojsonArray.reduce((allFeatures, geojsonData) => {
@@ -56,7 +82,7 @@ export const prepareGeojsonArray = (site) => {
     }, []),
   };
 
-  return geojson;
+  return bufferRooms(geojson);
 };
 
 export function calculateDistance(coord1, coord2) {
@@ -78,9 +104,12 @@ export function calculateDistance(coord1, coord2) {
   const dLon = lon2Rad - lon1Rad;
 
   // Formule de Haversine pour calculer la distance
-  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos(lat1Rad) * Math.cos(lat2Rad) *
-            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1Rad) *
+      Math.cos(lat2Rad) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
   // Distance en kilomètres
@@ -92,4 +121,3 @@ export function calculateDistance(coord1, coord2) {
 function degToRad(degrees) {
   return degrees * (Math.PI / 180);
 }
-

@@ -210,6 +210,7 @@ class IndoorLayer {
     this._map.addSource(SOURCE_ID, {
       type: "geojson",
       data: geojson,
+      lineMetrics: true,
       //'generateId': true
     });
 

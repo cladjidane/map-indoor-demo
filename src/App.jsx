@@ -52,7 +52,7 @@ const App = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://brest-arena.51-83-37-25.plesk.page/wp-json/k/v1/maps/map/" +
+          "https://brestarena.fr/wp-json/k/v1/maps/map/" +
             mapid
         );
         const apiData = response.data;
@@ -136,12 +136,12 @@ const App = () => {
       style: "mapbox://styles/jeofun/clm7b04lj00yi01que65k0llt",
       center: data.steps[0].step_mapconfig.center, //[0.001196129190514, -0.006008249764901], // [lng, lat], //
       zoom: data.steps[0].step_mapconfig.zoom,
-      dragPan: false,
+      //dragPan: false,
     });
 
     const nav = new mapboxgl.NavigationControl();
     map.current.addControl(nav, "bottom-right");
-    map.current.scrollZoom.disable();
+    //map.current.scrollZoom.disable();
 
     map.current.on("load", function () {
       let hoveredPolygonId = null;

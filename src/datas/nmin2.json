@@ -744,7 +744,6 @@
         "layer": "N-2",
         "indoor": "corridor",
         "name": "Couloir n-2",
-        "border":true,
         "desc": null,
         "level": "-2"
       },
