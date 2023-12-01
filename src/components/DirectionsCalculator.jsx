@@ -18,7 +18,7 @@ const DirectionsCalculator = ({ map }) => {
   const [error, setError] = useState(null);
 
   const accessToken =
-    "pk.eyJ1IjoiamVvZnVuIiwiYSI6ImNrd3huZXZjMzAwMWkycXFtb29zeDMxdnMifQ.N0SyKbZ6Br7bCL0IPmUZIg";
+    "pk.eyJ1IjoiamVvZnVuLTIiLCJhIjoiY2xwbWZxejg4MDlwejJqcW40M2N1bW1sdiJ9.k6oozIhLBsUdxRdbkCBKmg";
 
   useEffect(() => {
     const mapboxGeocoder = new MapboxGeocoder({
