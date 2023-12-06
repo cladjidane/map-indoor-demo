@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from "react";
-import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
-import mapboxgl from "mapbox-gl";
 import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
-import { calculateDistance } from "../helpers";
-import IcVoiture from "./IcVoiture";
+
+import React, { useEffect, useState } from "react";
+
+import IcPied from "./IcPied";
 import IcTc from "./IcTc";
 import IcVelo from "./IcVelo";
-import IcPied from "./IcPied";
+import IcVoiture from "./IcVoiture";
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
+import { calculateDistance } from "../helpers";
+import mapboxgl from "mapbox-gl";
 
-const DirectionsCalculator = ({ map }) => {
+const DirectionsCalculator = () => {
   const [startPoint, setStartPoint] = useState("");
   const rayonLimiteEnKm = 300; // Par exemple, un rayon de 5 km
 
@@ -18,7 +20,7 @@ const DirectionsCalculator = ({ map }) => {
   const [error, setError] = useState(null);
 
   const accessToken =
-    "pk.eyJ1IjoiamVvZnVuLTIiLCJhIjoiY2xwbWZxejg4MDlwejJqcW40M2N1bW1sdiJ9.k6oozIhLBsUdxRdbkCBKmg";
+    "pk.eyJ1IjoiamVvZnVuLTIiLCJhIjoiY2xwamV1bGI4MDltNjJsbGVxbW9rbDZseCJ9.OTLNnBuJLfOG6rh8jdRxrA";
 
   useEffect(() => {
     const mapboxGeocoder = new MapboxGeocoder({
@@ -36,6 +38,7 @@ const DirectionsCalculator = ({ map }) => {
     mapboxGeocoder.setPlaceholder("Vous partez d'où ?");
 
     mapboxGeocoder.on("result", (event) => {
+      setError(null)
       setStartPoint([
         event.result.geometry.coordinates[1],
         event.result.geometry.coordinates[0],
@@ -44,9 +47,13 @@ const DirectionsCalculator = ({ map }) => {
   }, []);
 
   const generateGoogleMapsLink = (mode) => {
-    const travelMode = mode; // Mode de transport en transports en commun
-    const googleMapsURL = `https://www.google.com/maps/dir/?api=1&origin=${startPoint}&destination=${destination[1]},${destination[0]}&travelmode=${travelMode}`;
-    window.open(googleMapsURL, "_blank");
+    if(!startPoint) setError('Veuillez préciser votre lieu de départ')
+    else {
+      setError(null)
+      const travelMode = mode; // Mode de transport en transports en commun
+      const googleMapsURL = `https://www.google.com/maps/dir/?api=1&origin=${startPoint}&destination=${destination[1]},${destination[0]}&travelmode=${travelMode}`;
+      window.open(googleMapsURL, "_blank");
+    }
   };
 
   return (
@@ -54,7 +61,6 @@ const DirectionsCalculator = ({ map }) => {
       <p className="mb-2 font-bold">Calculez votre itinéraire :</p>
       <div id="geocoder-container" className="mb-6"></div>
 
-      {startPoint && (
         <>
           <p className="mb-2 font-bold">
             Vous souhaitez venir{" "}
@@ -72,6 +78,8 @@ const DirectionsCalculator = ({ map }) => {
             </span>{" "}
             :
           </p>
+
+          <div className="text-red-500 font-bold my-2">{error && <p>{error}</p>}</div>
           <div className="grid grid-cols-2 gap-4">
             <button
               className="bg-orange text-white px-4 py-4 rounded-lg"
@@ -115,9 +123,8 @@ const DirectionsCalculator = ({ map }) => {
             </button>
           </div>
         </>
-      )}
+
       {/* {routeInstructions.length > 0 && renderInstructions()} */}
-      {error && <p>Une erreur s'est produite. Veuillez réessayer.</p>}
     </div>
   );
 };
