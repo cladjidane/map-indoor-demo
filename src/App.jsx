@@ -20,7 +20,7 @@ import { prepareGeojsonArray, initScrollTrigger } from "./helpers";
 import ArrowToGo from "./components/ArrowToGo";
 
 mapboxgl.accessToken =
-  "pk.eyJ1IjoiamVvZnVuIiwiYSI6ImNrd3huZXZjMzAwMWkycXFtb29zeDMxdnMifQ.N0SyKbZ6Br7bCL0IPmUZIg";
+  "pk.eyJ1IjoiamVvZnVuLTIiLCJhIjoiY2xwbWZxejg4MDlwejJqcW40M2N1bW1sdiJ9.k6oozIhLBsUdxRdbkCBKmg";
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -134,7 +134,7 @@ const App = () => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/jeofun/clm7b04lj00yi01que65k0llt",
+      style: "mapbox://styles/jeofun-2/clpmftiut00y801po3xjkfvdv",
       center: data.steps[0].step_mapconfig.center, //[0.001196129190514, -0.006008249764901], // [lng, lat], //
       zoom:
         width < 700
