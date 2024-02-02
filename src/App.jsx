@@ -223,7 +223,7 @@ const App = () => {
             </div>
       )
       : (
-        <><div onClick={() => setLoadmap(true)} className="map-container xs:relative md:absolute md:min-h-[600px] h-full top-0 right-0 z-10 xs:w-full md:w-9/12"><img src="map-brest-arena.png" className="object-cover h-full w-full"/></div></>
+        <><div onClick={() => setLoadmap(true)} className="map-container xs:relative md:absolute md:min-h-[600px] h-full top-0 right-0 z-10 xs:w-full md:w-9/12"><img src="/map-brest-arena.png" className="object-cover h-full w-full"/></div></>
       )}
 
     </div>
