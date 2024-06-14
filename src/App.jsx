@@ -1,4 +1,5 @@
 import "mapbox-gl/dist/mapbox-gl.css";
+import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css'
 
 import * as React from "react";
 import * as turf from "@turf/turf";
@@ -7,6 +8,7 @@ import { IndoorControl, IndoorMap, addIndoorTo } from "./map-indoor"; // dossier
 import { useEffect, useRef, useState } from "react";
 
 import DirectionsCalculator from "./components/DirectionsCalculator";
+import MapboxDraw from "@mapbox/mapbox-gl-draw";
 import MapboxPopup from "./components/MapboxPopup";
 import ReactDOMServer from "react-dom/server";
 import axios from "axios";
@@ -45,8 +47,9 @@ const App = () => {
     const rootElement = document.getElementById("ba-map");
     const classeString = Array.from(rootElement.classList).join(" ");
     const match = classeString.match(/map-(\w+)/);
-    const mapid = match[1] || 5095;
-
+    // const mapid = match[1] || 5095;
+    // 4618 -> Spectacle
+    const mapid = 4618;
     const fetchData = async () => {
       try {
         const response = await axios.get(
@@ -67,8 +70,8 @@ const App = () => {
     if (process.env.NODE_ENV === "production") {
       fetchData();
     } else {
-      setData(site);
-      //fetchData();
+      //setData(site);
+      fetchData();
     }
   }, []);
 
@@ -180,20 +183,16 @@ const App = () => {
 
     map.current.indoor.addMap(IndoorMap.fromGeojson(geojson));
     map.current.addControl(new IndoorControl(), "bottom-right");
+
   }, [data, loadmap]);
 
   //if (!data) return;
   return (
     <div id="section-map" className="h-full relative" ref={sectionMapRef}>
-      <div className="relative z-50 md:h-full xs:w-full md:w-3/12 flex flex-col xs:p-8 xs:pl-8 md:pl-16 justify-center bg-white mapmask">
-        <p className="uppercase text-gray-400 mb-2">PRÉPAREZ</p>
-        <h3 className="text-3xl mb-4 font-[900] text-orange">VOTRE VENUE</h3>
-        <DirectionsCalculator />
-      </div>
       { loadmap ? (
               <div
               ref={mapContainer}
-              className="map-container xs:relative md:absolute min-h-[600px] h-full top-0 right-0 z-10 xs:w-full md:w-9/12"
+              className="map-container xs:relative md:absolute min-h-[600px] h-full top-0 right-0 z-10"
             >
               {data && (
                 <div className="z-50 absolute right-12 top-12 drop-shadow-xl">

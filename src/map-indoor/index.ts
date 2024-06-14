@@ -1,4 +1,5 @@
 export { default as IndoorControl } from './IndoorControl';
+export { default as IndoorDraw } from './IndoorDraw';
 export { default as IndoorLayer } from './IndoorLayer';
 export { default as IndoorMap } from './IndoorMap';
 export { default as MapServerHandler } from './MapServerHandler';
