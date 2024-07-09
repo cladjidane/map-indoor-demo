@@ -49,7 +49,7 @@ const App = () => {
     const match = classeString.match(/map-(\w+)/);
     // const mapid = match[1] || 5095;
     // 4618 -> Spectacle
-    const mapid = 4618;
+    const mapid = 8619;
     const fetchData = async () => {
       try {
         const response = await axios.get(
@@ -121,6 +121,8 @@ const App = () => {
           .setLngLat(coordinates)
           .setHTML(popupContent)
           .addTo(map.current);
+
+        alert(JSON.stringify(e.features[0]))
       });
 
       map.current.on("mousemove", "indoor-rooms-hover", (e) => {

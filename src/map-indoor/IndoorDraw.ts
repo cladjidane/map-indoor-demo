@@ -20,6 +20,8 @@ class IndoorDraw {
       controls: {
         polygon: true,
         trash: true,
+        point: true,
+        line_string: true,
       },
     });
     this._map.addControl(draw);
