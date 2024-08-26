@@ -1,23 +1,20 @@
 import "mapbox-gl/dist/mapbox-gl.css";
-import ReactDOMServer from "react-dom/server";
 
 import * as React from "react";
-import axios from "axios";
-
 import * as turf from "@turf/turf";
 
+import { IndoorControl, IndoorMap, addIndoorTo } from "./map-indoor"; // dossier ts pas le compoenent
+import { initScrollTrigger, prepareGeojsonArray } from "./helpers";
 import { useEffect, useRef, useState } from "react";
-import { addIndoorTo, IndoorMap, IndoorControl } from "./map-indoor"; // dossier ts pas le compoenent
-import { useWindowSize } from "usehooks-ts";
 
-import { filtersByDatas } from "./map-indoor/Utils";
-import site from "./datas/site.json";
-
-import mapboxgl from "mapbox-gl";
-import MapboxPopup from "./components/MapboxPopup";
-
-import { prepareGeojsonArray, initScrollTrigger } from "./helpers";
 import ArrowToGo from "./components/ArrowToGo";
+import MapboxPopup from "./components/MapboxPopup";
+import ReactDOMServer from "react-dom/server";
+import axios from "axios";
+import { filtersByDatas } from "./map-indoor/Utils";
+import mapboxgl from "mapbox-gl";
+import site from "./datas/site.json";
+import { useWindowSize } from "usehooks-ts";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiamVvZnVuLTIiLCJhIjoiY2xwbWZxejg4MDlwejJqcW40M2N1bW1sdiJ9.k6oozIhLBsUdxRdbkCBKmg";
@@ -69,7 +66,7 @@ const App = () => {
     if (process.env.NODE_ENV === "production") {
       fetchData();
     } else {
-      console.log(site);
+      console.log('FAKE', site);
       setData(site);
       //fetchData();
     }

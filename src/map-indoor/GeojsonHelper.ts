@@ -1,7 +1,7 @@
-import bbox from '@turf/bbox';
-
 import type { BBox, Feature } from 'geojson';
-import type { LevelsRange, IndoorMapGeoJSON } from './Types';
+import type { IndoorMapGeoJSON, LevelsRange } from './Types';
+
+import bbox from '@turf/bbox';
 
 /**
  * Helper for Geojson data
@@ -57,7 +57,6 @@ class GeoJsonHelper {
         const bounds = bbox(geojson);
 
         const parseFeature = (feature: Feature): void => {
-            console.log(feature.properties)
             const level = this.extractLevelFromFeature(feature);
             if (level === null) {
                 return;
