@@ -583,7 +583,7 @@
         "indoor": "building-background",
         "name": "Sol intérieur Brest Arena Niveau 0",
         "desc": null,
-        "level": "0;1",
+        "level": "-2;1",
         "area-shadow-inside": true,
         "fill-color": "white",
         "id": "ID_3240"

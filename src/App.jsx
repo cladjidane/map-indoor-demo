@@ -166,6 +166,8 @@ const App = () => {
       map.current.on("click", "indoor-rooms-hover", (e) => {
         const properties = e.features[0].properties;
         const coordinates = turf.centroid(e.features[0]).geometry.coordinates;
+        
+        if(JSON.parse(properties.images).length === 0) return 
 
         // Supprimer la popup précédente si elle existe
         if (popupRef.current) {
@@ -192,6 +194,10 @@ const App = () => {
       });
 
       map.current.on("mousemove", "indoor-rooms-hover", (e) => {
+        
+        const properties = e.features[0].properties;
+        if(JSON.parse(properties.images).length === 0) return 
+
         map.current.getCanvas().style.cursor = "pointer";
 
         if (e.features.length > 0) {
