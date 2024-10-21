@@ -85,47 +85,47 @@ const App = () => {
     map.current.setCenter(newCenter);
   }, [width]);
 
-  useEffect(() => {
-    if (!data || !map.current) return;
+  // useEffect(() => {
+  //   if (!data || !map.current) return;
 
-    data.allFeatures.forEach((feature) => {
-      map.current.setFeatureState(
-        {
-          source: "indoor",
-          id: feature.id,
-        },
-        { hover: false }
-      );
-    });
+  //   data.allFeatures.forEach((feature) => {
+  //     map.current.setFeatureState(
+  //       {
+  //         source: "indoor",
+  //         id: feature.id,
+  //       },
+  //       { hover: false }
+  //     );
+  //   });
 
-    if (featuresHovered) {
-      featuresHovered.forEach((featureId) => {
-        map.current.setFeatureState(
-          {
-            source: "indoor",
-            id: featureId,
-          },
-          { hover: true }
-        );
-      });
-    }
+  //   if (featuresHovered) {
+  //     featuresHovered.forEach((featureId) => {
+  //       map.current.setFeatureState(
+  //         {
+  //           source: "indoor",
+  //           id: featureId,
+  //         },
+  //         { hover: true }
+  //       );
+  //     });
+  //   }
 
-    const feature = data.allFeatures.find((el) => el.id === featuresHovered[0]);
-    const coordinates = turf.centroid(feature).geometry.coordinates;
-    if (map.current.indoor.getSelectedMap()) {
-      map.current.indoor.setLevel(parseInt(feature.properties.level));
-    }
-    if (popupRef.current) popupRef.current.remove();
+  //   const feature = data.allFeatures.find((el) => el.id === featuresHovered[0]);
+  //   const coordinates = turf.centroid(feature).geometry.coordinates;
+  //   if (map.current.indoor.getSelectedMap()) {
+  //     map.current.indoor.setLevel(parseInt(feature.properties.level));
+  //   }
+  //   if (popupRef.current) popupRef.current.remove();
 
-    const popupContent = ReactDOMServer.renderToString(
-      <MapboxPopup properties={feature.properties} />
-    );
+  //   const popupContent = ReactDOMServer.renderToString(
+  //     <MapboxPopup properties={feature.properties} />
+  //   );
 
-    popupRef.current = new mapboxgl.Popup()
-      .setLngLat(coordinates)
-      .setHTML(popupContent)
-      .addTo(map.current);
-  }, [data, featuresHovered]);
+  //   popupRef.current = new mapboxgl.Popup()
+  //     .setLngLat(coordinates)
+  //     .setHTML(popupContent)
+  //     .addTo(map.current);
+  // }, [data, featuresHovered]);
 
   useEffect(() => {
     if (data === null) return;
@@ -167,23 +167,27 @@ const App = () => {
         const properties = e.features[0].properties;
         const coordinates = turf.centroid(e.features[0]).geometry.coordinates;
 
-       // Supprimer la popup précédente si elle existe
-       if (popupRef.current) {
-        popupRef.current.remove();
-      }
+        // Supprimer la popup précédente si elle existe
+        if (popupRef.current) {
+          popupRef.current.remove();
+        }
 
-      // Créer un nouvel élément DOM pour la popup
-      const popupNode = document.createElement("div");
-      root.render(
+        // Créer un nouvel élément DOM pour la popup
+        const popupNode = document.createElement("div");
+
+        // Utiliser ReactDOM.createRoot pour rendre le composant React
+        const root = createRoot(popupNode);
+        root.render(
           <MapboxPopup
             properties={properties}
             closePopup={() => popupRef.current.remove()}
           />
         );
 
-        popupNode.current = new mapboxgl.Popup()
+        // Créer et ajouter la popup à la carte
+        popupRef.current = new mapboxgl.Popup({ offset: 15 })
           .setLngLat(coordinates)
-          .setHTML(popupNode)
+          .setDOMContent(popupNode)
           .addTo(map.current);
       });
 
