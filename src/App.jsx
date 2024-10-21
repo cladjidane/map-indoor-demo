@@ -22,6 +22,7 @@ mapboxgl.accessToken =
 const App = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
+  const popupRef = useRef(null);
   const popup = useRef(null);
   const [featureId, setFeatureId] = useState(null);
 
@@ -66,9 +67,8 @@ const App = () => {
     if (process.env.NODE_ENV === "production") {
       fetchData();
     } else {
-      console.log('FAKE', site);
-      setData(site);
-      //fetchData();
+      
+      fetchData();
     }
   }, []);
 
@@ -114,13 +114,13 @@ const App = () => {
     if (map.current.indoor.getSelectedMap()) {
       map.current.indoor.setLevel(parseInt(feature.properties.level));
     }
-    if (popup.current) popup.current.remove();
+    if (popupRef.current) popupRef.current.remove();
 
     const popupContent = ReactDOMServer.renderToString(
       <MapboxPopup properties={feature.properties} />
     );
 
-    popup.current = new mapboxgl.Popup()
+    popupRef.current = new mapboxgl.Popup()
       .setLngLat(coordinates)
       .setHTML(popupContent)
       .addTo(map.current);
@@ -166,17 +166,23 @@ const App = () => {
         const properties = e.features[0].properties;
         const coordinates = turf.centroid(e.features[0]).geometry.coordinates;
 
-        if (popup.current) {
-          popup.current.remove();
-        }
+       // Supprimer la popup précédente si elle existe
+       if (popupRef.current) {
+        popupRef.current.remove();
+      }
 
-        const popupContent = ReactDOMServer.renderToString(
-          <MapboxPopup properties={properties} />
+      // Créer un nouvel élément DOM pour la popup
+      const popupNode = document.createElement("div");
+      root.render(
+          <MapboxPopup
+            properties={properties}
+            closePopup={() => popupRef.current.remove()}
+          />
         );
 
-        popup.current = new mapboxgl.Popup()
+        popupNode.current = new mapboxgl.Popup()
           .setLngLat(coordinates)
-          .setHTML(popupContent)
+          .setHTML(popupNode)
           .addTo(map.current);
       });
 
@@ -256,8 +262,8 @@ const App = () => {
   useEffect(() => {
     if (!map.current) return;
     if (!data.steps[currentStep]) return;
-    if (popup.current) {
-      popup.current.remove();
+    if (popupRef.current) {
+      popupRef.current.remove();
     }
     const level = data.steps[currentStep].step_mapconfig.level;
     let easeTo = {
