@@ -11,6 +11,7 @@ import ArrowToGo from "./components/ArrowToGo";
 import MapboxPopup from "./components/MapboxPopup";
 import ReactDOMServer from "react-dom/server";
 import axios from "axios";
+import { createRoot } from "react-dom/client";
 import { filtersByDatas } from "./map-indoor/Utils";
 import mapboxgl from "mapbox-gl";
 import site from "./datas/site.json";
