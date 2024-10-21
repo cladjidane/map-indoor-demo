@@ -1,15 +1,15 @@
-import mapboxgl from "mapbox-gl";
-import { default as turfDistance } from "@turf/distance";
-import IndoorMap from "./IndoorMap";
-import { overlap, filterWithLevel, bboxCenter } from "./Utils";
-
 import type {
-  Level,
   ExpressionSpecification,
   LayerSpecification,
+  Level,
   MapGL,
 } from "./Types";
+import { bboxCenter, filterWithLevel, overlap } from "./Utils";
+
 import type { BBox } from "geojson";
+import IndoorMap from "./IndoorMap";
+import mapboxgl from "mapbox-gl";
+import { default as turfDistance } from "@turf/distance";
 
 type SavedFilter = {
   layerId: string;
@@ -210,6 +210,7 @@ class IndoorLayer {
     this._map.addSource(SOURCE_ID, {
       type: "geojson",
       data: geojson,
+      lineMetrics: true,
       //'generateId': true
     });
 
@@ -237,7 +238,7 @@ class IndoorLayer {
 
   _closestMap() {
     // TODO enhance this condition
-    if (this._map.getZoom() < 17) {
+    if (this._map.getZoom() < 16) {
       return null;
     }
 
