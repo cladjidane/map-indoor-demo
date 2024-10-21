@@ -20,11 +20,30 @@ html {
 	}
 }
 
-.map-container {
+.mapmask:before {
+  pointer-events: none;
+  content: "";
+  bottom: 0;
+  left: 100%;
   position: absolute;
   right: 0;
   top: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-image: url('data:image/svg+xml,<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1478.7 1440" style="enable-background:new 0 0 1478.7 1440;" xml:space="preserve"><style type="text/css"> .st0 { opacity: 0.6; enable-background: new; fill: white; } </style><g><path d="M4.6,1440L389.1,0H0v1440H4.6z" fill="white" /><path class="st0" d="M547.7,0L4.6,1440H0V0H547.7z" /><path class="st0" d="M472,0L4.6,1440H0V0H472z" /></g></svg>');
+  background-position: -80px center;
+  width: 100vw;
+}
+
+.map-container {
+  right: 0;
+  top: 0;
   bottom: 0;
+}
+
+.mapboxgl-popup {
+  max-width: none !important;
 }
 
 .mapboxgl-popup-content {
@@ -49,4 +68,41 @@ html {
 
   top: -15px;
   right: -15px;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+  padding-left: 30px !important;
+}
+/* styles/custom-swiper.css */
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  opacity: 1;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;
+  color: black; /* Couleur de la flèche */
+}
+
+.swiper-button-next::after {
+  content: '→'; /* Flèche droite */
+}
+
+.swiper-button-prev::after {
+  content: '←'; /* Flèche gauche */
 }
