@@ -285,29 +285,6 @@
     }
   },
   {
-    "filter": ["any", ["filter-==", "indoor", "room"], ["has", "border"]],
-    "id": "indoor-rooms-borders",
-    "type": "line",
-    "source": "indoor",
-    "paint": {
-      "line-color": [
-        "case",
-        ["has", "line-color"],
-        ["get", "line-color"],
-        "black"
-      ],
-      "line-blur": 1,
-      "line-width": ["case", ["has", "line-width"], ["get", "line-width"], 0.2],
-      "line-opacity": {
-        "base": 1,
-        "stops": [
-          [15, 0],
-          [18, 1]
-        ]
-      }
-    }
-  },
-  {
     "filter": ["any", ["filter-==", "indoor", "seating"]],
     "id": "indoor-seating-borders",
     "type": "line",
@@ -686,14 +663,14 @@
       "icon-size": {
         "base": 1,
         "stops": [
-          [17, 0.5],
+          [16, 0.5],
           [20, 1]
         ]
       },
       "text-size": {
         "base": 1,
         "stops": [
-          [17, 11],
+          [16, 11],
           [20, 13]
         ]
       },
@@ -712,24 +689,25 @@
       "text-rotation-alignment": "viewport",
       "text-anchor": "top",
       "text-field": "{name}",
+      "text-transform": "uppercase",
       "text-letter-spacing": 0.02,
-      "text-max-width": 8,
+      "text-max-width": 10,
       "icon-allow-overlap": true
     },
-    "filter": ["boolean", false],
+   "filter": ["filter-==", "indoor", "room-hover"],
     "type": "symbol",
     "source": "indoor",
     "id": "poi-indoor",
     "paint": {
-      "text-color": "#65513d",
+      "text-color": "black",
       "text-halo-color": "#ffffff",
       "text-halo-width": 1,
       "text-opacity": {
         "base": 1,
         "stops": [
-          [17, 0],
-          [17.5, 0.5],
-          [19, 1]
+          [16, 0],
+          [16.5, 0.5],
+          [17, 1]
         ]
       },
       "icon-opacity": {
@@ -775,6 +753,18 @@
       "text-color": "#65513d",
       "text-halo-color": "#ffffff",
       "text-halo-width": 1
+    }
+  },
+  {
+    "filter": ["filter-==", "name", "Sol intérieur Brest Arena Niveau 0"],
+    "id": "indoor-fantom-borders",
+    "type": "line",
+    "source": "indoor",
+    "paint": {
+      "line-color": "#000000",
+      "line-width": 3,
+      "line-blur": 1,
+      "line-opacity": 0.1
     }
   }
 ]
